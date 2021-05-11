@@ -30,8 +30,6 @@
 
             }
 
-            var_dump($stmt);
-
         }
 
         public function importar() {
