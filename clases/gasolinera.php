@@ -44,16 +44,16 @@
             // $this->importarMunicipios($arrGasolineras);
 
             $stmt = $conn->prepare("INSERT INTO gasolineras(logo, nombre, direccion, id_municipio, latitud, longitud, gasolina95, gasolina98, diesel, diesel_premium, horario) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
-            $stmt->bind_param('sssddidddds', $logo, $nombre, $direccion, $latitud, $longitud, $idMunicipio, $gasolina95, $gasolina98, $diesel, $dieselPremium, $horario);
+            $stmt->bind_param('sssidddddds', $logo, $nombre, $direccion, $idMunicipio, $latitud, $longitud, $gasolina95, $gasolina98, $diesel, $dieselPremium, $horario);
                 
             foreach ($arrGasolineras->ListaEESSPrecio as $gasolinera) {
 
                 $logo = '';
                 $nombre = $gasolinera->Rótulo;
                 $direccion = $gasolinera->Dirección;
-                $latitud = $gasolinera->Latitud;
+                $latitud = generica::numberFormatBD($gasolinera->Latitud);
                 $longitud = generica::numberFormatBD($gasolinera->{'Longitud (WGS84)'});
-                $idMunicipio = $gasolinera->IDMunicipio;
+                $idMunicipio = $gasolinera->{'IDMunicipio'};
                 $gasolina95 = generica::numberFormatBD($gasolinera->{'Precio Gasolina 95 E5'});
                 $gasolina98 = generica::numberFormatBD($gasolinera->{'Precio Gasolina 98 E5'});
                 $diesel = generica::numberFormatBD($gasolinera->{'Precio Gasoleo A'});
@@ -61,7 +61,7 @@
                 $horario = $gasolinera->Horario;
                 $stmt->execute();
 
-                var_dump($IDMunicipio);
+                var_dump($idMunicipio);
 
             }
 
