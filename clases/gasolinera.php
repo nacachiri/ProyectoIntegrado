@@ -41,7 +41,7 @@
             $return = file_get_contents("https://sedeaplicaciones.minetur.gob.es/ServiciosRESTCarburantes/PreciosCarburantes/EstacionesTerrestres/FiltroProvincia/46");
             $arrGasolineras = json_decode($return);
 
-            // $this->importarMunicipios($arrGasolineras);
+            $this->importarMunicipios($arrGasolineras);
 
             $stmt = $conn->prepare("INSERT INTO gasolineras(logo, nombre, direccion, id_municipio, latitud, longitud, gasolina95, gasolina98, diesel, diesel_premium, horario) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
             $stmt->bind_param('sssidddddds', $logo, $nombre, $direccion, $idMunicipio, $latitud, $longitud, $gasolina95, $gasolina98, $diesel, $dieselPremium, $horario);
@@ -61,14 +61,10 @@
                 $horario = $gasolinera->Horario;
                 $stmt->execute();
 
-                var_dump($idMunicipio);
-
             }
 
             $stmt->close();
 
-    
-            
         }
 
     }
