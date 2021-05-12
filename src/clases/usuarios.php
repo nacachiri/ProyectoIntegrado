@@ -18,8 +18,7 @@
 
                     session_start();
                     $_SESSION['logged'] = true;
-                    // header('location:../index.php');
-                    return 'Todo OK Loggeado';
+                    return true;
 
                 } else {
 
