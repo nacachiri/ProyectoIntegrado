@@ -48,6 +48,26 @@
 
                 $logo = '';
                 $nombre = $gasolinera->Rótulo;
+
+                switch ($nombre) {
+                    case 'REPSOL':
+                        $logo = './public/logosGasolineras/logoRepsol.png';
+                        break;
+                    case 'BP':
+                        $logo = './public/logosGasolineras/logoBp.png';
+                        break;
+                    case 'CEPSA':
+                        $logo = './public/logosGasolineras/logoCepsa.png';
+                        break;
+                    case 'SHELL':
+                        $logo = './public/logosGasolineras/logoShell.png';
+                        break;
+                    
+                    default:
+                        $logo = './public/logosGasolineras/logoDefault.png';
+                        break;
+                }
+
                 $direccion = $gasolinera->Dirección;
                 $latitud = generica::numberFormatBD($gasolinera->Latitud);
                 $longitud = generica::numberFormatBD($gasolinera->{'Longitud (WGS84)'});
