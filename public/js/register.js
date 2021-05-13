@@ -30,14 +30,15 @@ document.addEventListener("DOMContentLoaded", () => {
 
                     let divAlerta = document.getElementById('divAlerta');
                     let spanMensajeAlerta = document.getElementById('divMensajeError');
-                    divAlerta.classList.remove('hidden');
-                    divAlerta.classList.remove('bg-red-100');
-                    divAlerta.classList.add('bg-green-100');
-                    spanMensajeAlerta.innerHTML = response.data;
+                    let errorStrong = document.getElementById('errorStrong');
+                    divAlerta.className = 'border text-green-700 px-4 py-3 rounded relative bg-green-100 border-green-400';
+                    
+                    errorStrong.innerHTML = 'OK!'
+                    spanMensajeAlerta.innerHTML = 'Se ha registrado correctamente';
 
-                    // setTimeout(() => {
-                    //     window.location.href = 'index.php';
-                    // }, 3000);
+                    setInterval(() => {
+                        window.location.href = 'index.php';
+                    }, 3000);
                 
                 }else{
 

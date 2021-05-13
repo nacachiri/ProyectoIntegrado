@@ -51,45 +51,59 @@
 
                 if ($formatoDNI == true) {
 
-                    if(filter_var($arrDatos["email"] , FILTER_VALIDATE_EMAIL)){
+                    if ($this->comprobarDNI($arrDatos['dni']) == false) {
+                        
+                        if(filter_var($arrDatos["email"] , FILTER_VALIDATE_EMAIL)){
 
-                        if (strlen($arrDatos["password"]) > 8) {
-
-                            if (strlen($arrDatos["cp"]) == 5) {
+                            if ($this->comprobarEmail($arrDatos["email"]) == false) {
                                 
-                                $conn = $this->getConn();
-
-                                $dniPost = $arrDatos['dni'];
-                                $namePost = $arrDatos['name'];
-                                $surnamesPost = $arrDatos['surnames'];
-                                $emailPost = $arrDatos['email'];
-                                $passwordPost = $this->encryptPassword($arrDatos['password']);
-                                $cpPost = $arrDatos['cp'];
-                
-                                $sql = "INSERT INTO register_user (dni, nombre, apellidos, email, password, cp) VALUES ('$dniPost', '$namePost', '$surnamesPost', '$emailPost', '$passwordPost', '$cpPost');";
-                                $query = $conn->query($sql);
-
-                                return true;
-
+                                if (strlen($arrDatos["password"]) > 8) {
+    
+                                    if (strlen($arrDatos["cp"]) == 5) {
+                                        
+                                        $conn = $this->getConn();
+        
+                                        $dniPost = $arrDatos['dni'];
+                                        $namePost = $arrDatos['name'];
+                                        $surnamesPost = $arrDatos['surnames'];
+                                        $emailPost = $arrDatos['email'];
+                                        $passwordPost = $this->encryptPassword($arrDatos['password']);
+                                        $cpPost = $arrDatos['cp'];
+                        
+                                        $sql = "INSERT INTO register_user (dni, nombre, apellidos, email, password, cp) VALUES ('$dniPost', '$namePost', '$surnamesPost', '$emailPost', '$passwordPost', '$cpPost');";
+                                        $query = $conn->query($sql);
+        
+                                        return true;
+        
+                                    }else {
+        
+                                        return 'El cp es incorrecto su logitud tiene que ser 5';
+            
+                                    }
+        
+                                }else {
+        
+                                    return 'El password es incorrecto minimo 8 caracteres';
+        
+                                }
+    
                             }else {
-
-                                return 'El cp es incorrecto su logitud tiene que ser 5';
+                                
+                                return 'El email ya esta en uso';
     
                             }
-
-                        }else {
-
-                            return 'El password es incorrecto minimo 8 caracteres';
-
+    
+                        }else{
+    
+                            return 'El email es incorrecto';
+    
                         }
 
-                    }else{
-
-                        return 'El email es incorrecto';
+                    }else {
+                        
+                        return 'El dni ya esta en uso';
 
                     }
-                    
-                    
 
                 }else {
                     
@@ -100,6 +114,44 @@
             }else {
 
                 return 'Alguno de los campos es incorreto';
+
+            }
+
+        }
+
+        public function comprobarEmail($email) {
+
+            $conn = $this->getConn();
+            
+            $sql = "SELECT email FROM register_user WHERE email = '$email'";
+            $query = $conn->query($sql);
+
+            if($query->num_rows != 0){
+                
+                return true;
+
+            }else {
+                
+                return false;
+
+            }
+
+        }
+
+        public function comprobarDNI($dni) {
+
+            $conn = $this->getConn();
+            
+            $sql = "SELECT dni FROM register_user WHERE dni = '$dni'";
+            $query = $conn->query($sql);
+
+            if($query->num_rows != 0){
+                
+                return true;
+
+            }else {
+                
+                return false;
 
             }
 
