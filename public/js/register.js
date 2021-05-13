@@ -35,7 +35,7 @@ document.addEventListener("DOMContentLoaded", () => {
     
                 if (response.data == 1) {
 
-                    console.log('Se ha logueado correctamente');
+                    let divAlerta = document.getElementById('divAlerta');
 
                     // setTimeout(() => {
                     //     window.location.href = 'index.php';
@@ -43,6 +43,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 
                 }else{
 
+                    divAlerta.addClass('hidden');
                     console.log('Alguno de los campos es erroneo');
 
                 }
