@@ -14,16 +14,19 @@
                 $query = $conn->query($sql);
                 $user = $query->fetch_assoc();
 
+               
+
                 if (password_verify($arrDatos['password'], $user['password']) && $arrDatos['email'] == $user['email']) {
 
                     session_start();
                     $_SESSION['logged'] = true;
+                    $this->logUser($arrDatos['email']);
                     return true;
 
                 } else {
 
                     $_SESSION['logged'] = false;
-                    return 'Algo ha fallado no estas loggedao';
+                    return 'El email y/o la contraseña son erroneos';
 
                 }
 
@@ -154,6 +157,17 @@
                 return false;
 
             }
+
+        }
+
+        public function logUser($email){
+
+            $conn = $this->getConn();
+            
+            $sql =  "INSERT INTO login(id_user, fechaHora) VALUES ((SELECT id FROM register_user WHERE email = '$email'), now());";
+            $query = $conn->query($sql);
+
+            return $query;
 
         }
 
