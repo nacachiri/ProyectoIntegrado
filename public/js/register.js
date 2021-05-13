@@ -13,13 +13,6 @@ document.addEventListener("DOMContentLoaded", () => {
         let dni = document.getElementsByName('dni');
         let cp = document.getElementsByName('cp');
 
-        console.log(name[0].value);
-        console.log(surnames[0].value);
-        console.log(email[0].value);
-        console.log(password[0].value);
-        console.log(dni[0].value);
-        console.log(cp[0].value);
-
         if (name[0].value != null && surnames[0].value != null && name[0].value != '' && surnames[0].value != '' && email[0].value != null && password[0].value != null && email[0].value != '' && password[0].value != '' && dni[0].value != null && cp[0].value != null && dni[0].value != '' && cp[0].value != '') {
 
             axios.post('../src/registerUser.php', {
@@ -36,6 +29,11 @@ document.addEventListener("DOMContentLoaded", () => {
                 if (response.data == 1) {
 
                     let divAlerta = document.getElementById('divAlerta');
+                    let spanMensajeAlerta = document.getElementById('divMensajeError');
+                    divAlerta.classList.remove('hidden');
+                    divAlerta.classList.remove('bg-red-100');
+                    divAlerta.classList.add('bg-green-100');
+                    spanMensajeAlerta.innerHTML = response.data;
 
                     // setTimeout(() => {
                     //     window.location.href = 'index.php';
@@ -43,8 +41,10 @@ document.addEventListener("DOMContentLoaded", () => {
                 
                 }else{
 
-                    divAlerta.addClass('hidden');
-                    console.log('Alguno de los campos es erroneo');
+                    let divAlerta = document.getElementById('divAlerta');
+                    let spanMensajeAlerta = document.getElementById('divMensajeError');
+                    divAlerta.classList.remove('hidden');
+                    spanMensajeAlerta.innerHTML = response.data;
 
                 }
 
@@ -52,7 +52,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
         }else {
 
-            console.log('Campos Vacios');
+            let divAlerta = document.getElementById('divAlerta');
+            let spanMensajeAlerta = document.getElementById('divMensajeError');
+            divAlerta.classList.remove('hidden');
+            spanMensajeAlerta.innerHTML = 'Alguno de los campos esta vacio';
 
         }
         
