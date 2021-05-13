@@ -17,14 +17,30 @@ document.addEventListener("DOMContentLoaded", () => {
                 email : email[0].value,
     
             }).then((response) => {
+                
+                console.log(response.data);
     
                 if (response.data == 1) {
 
-                    window.location.href = 'index.php';
+                    let divAlerta = document.getElementById('divAlerta');
+                    let spanMensajeAlerta = document.getElementById('divMensajeError');
+                    let errorStrong = document.getElementById('errorStrong');
+                    divAlerta.className = 'border text-green-700 px-4 py-3 rounded relative bg-green-100 border-green-400';
+                    
+                    errorStrong.innerHTML = 'OK!'
+                    spanMensajeAlerta.innerHTML = 'Se ha loggeado correctamente';
 
+                    setTimeout(() => {
+                        window.location.href = 'index.php';
+                    }, 1500);
+                
                 }else{
 
-                    console.log('Alguno de los campos es erroneo');
+                    let divAlerta = document.getElementById('divAlerta');
+                    let spanMensajeAlerta = document.getElementById('divMensajeError');
+                    divAlerta.classList.remove('hidden');
+                    divAlerta.className = 'border text-red-700 px-4 py-3 rounded relative bg-red-100 border-red-400';
+                    spanMensajeAlerta.innerHTML = response.data;
 
                 }
 
@@ -32,7 +48,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
         }else {
 
-            console.log('Campos Vacios');
+            let divAlerta = document.getElementById('divAlerta');
+            let spanMensajeAlerta = document.getElementById('divMensajeError');
+            divAlerta.classList.remove('hidden');
+            divAlerta.className = 'border text-red-700 px-4 py-3 rounded relative bg-red-100 border-red-400';
+            spanMensajeAlerta.innerHTML = 'Alguno de los campos esta vacio';
 
         }
         

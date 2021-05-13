@@ -29,7 +29,7 @@
 
             }else {
 
-                throw new Exception("Alguno de los campos esta vacio", 2);
+                return 'Alguno de los campos esta vacio';
 
             }
 
