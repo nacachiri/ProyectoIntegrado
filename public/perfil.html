@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body>
+    <div>
+        <div class="flex h-screen overflow-y-hidden bg-white" x-data="setup()" x-init="$refs.loading.classList.add('hidden')">
+          <!-- Loading screen -->
+          <div
+            x-ref="loading"
+            class="fixed inset-0 z-50 flex items-center justify-center text-white bg-black bg-opacity-50"
+            style="backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px)"
+          >
+            Loading.....
+          </div>
+
+          <!-- Sidebar -->
+          <aside
+            :class="{' lg:translate-x-0 lg:w-0': !isSidebarOpen}"
+          >
+            <!-- Sidebar footer -->
+            <div class="flex-shrink-0 p-0 border-t max-h-14">
+            </div>
+          </aside>
+    
+          <div class="flex flex-col flex-1 h-full overflow-hidden">
+            <!-- Navbar -->
+            <header class="flex-shrink-0 border-b">
+              <div class="flex items-center justify-between p-2">
+                <!-- Navbar left -->
+                <div class="flex items-center space-x-3">
+                  <span class="p-2 text-xl font-semibold tracking-wider uppercase lg:hidden">K-WD</span>
+                </div>
+    
+                <!-- Mobile search box -->
+                <div
+                  x-show.transition="isSearchBoxOpen"
+                  class="fixed inset-0 z-10 bg-black bg-opacity-20"
+                  style="backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px)"
+                >
+                  <div
+                    @click.away="isSearchBoxOpen = false"
+                    class="absolute inset-x-0 flex items-center justify-between p-2 bg-white shadow-md"
+                  >
+
+                    <!-- close button -->
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+    
+                <!-- Desktop search box -->
+                <div class="items-center hidden px-2 space-x-2 md:flex-1 md:flex md:mr-auto md:ml-5">
+                  <!-- search icon -->
+                  <span>
+                    <svg
+                      class="w-5 h-5 text-gray-500"
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                    >
+                </div>
+    
+                <!-- Navbar right -->
+                <div class="relative flex items-center space-x-3">
+                  <!-- Search button -->
+                  <button
+                    @click="isSearchBoxOpen = true"
+                    class="p-2 bg-gray-100 rounded-full md:hidden focus:outline-none focus:ring hover:bg-gray-200"
+                  >
+                    <svg
+                      class="w-6 h-6 text-gray-500"
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+                      />
+                    </svg>
+                  </button>
+    
+                  <div class="items-center hidden space-x-3 md:flex">
+                   
+                  <!-- avatar button -->
+                  <div class="relative" x-data="{ isOpen: false }">
+                    <button @click="isOpen = !isOpen" class="p-1 bg-gray-200 rounded-full focus:outline-none focus:ring">
+                      <img
+                        class="object-cover w-12 h-12 rounded-full"
+                        src="https://avatars0.githubusercontent.com/u/57622665?s=460&u=8f581f4c4acd4c18c33a87b3e6476112325e8b38&v=4"
+                        alt="Ahmed Kamel"
+                      />
+                    </button>
+                    <!-- green dot -->
+                    <div class="absolute right-0 p-1 bg-green-400 rounded-full bottom-3 animate-ping"></div>
+                    <div class="absolute right-0 p-1 bg-green-400 border border-white rounded-full bottom-3"></div>
+    
+                    <!-- Dropdown card -->
+                    <div
+                      @click.away="isOpen = false"
+                      x-show.transition.opacity="isOpen"
+                      class="absolute mt-3 transform -translate-x-full bg-white rounded-md shadow-lg min-w-max"
+                    >
+                      <div class="flex flex-col p-4 space-y-1 font-medium border-b">
+                        <span class="text-gray-800">Ahmed Kamel</span>
+                        <span class="text-sm text-gray-400">ahmed.kamel@example.com</span>
+                      </div>
+                      <ul class="flex flex-col p-2 my-2 space-y-1">
+                        <li>
+                          <a href="#" class="block px-2 py-1 transition rounded-md hover:bg-gray-100">Link</a>
+                        </li>
+                        <li>
+                          <a href="#" class="block px-2 py-1 transition rounded-md hover:bg-gray-100">Another Link</a>
+                        </li>
+                      </ul>
+                      <div class="flex items-center justify-center p-4 text-blue-700 underline border-t">
+                        <a href="#">Logout</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </header>
+            <!-- Main content -->
+            <main class="flex-1 max-h-full p-5 overflow-hidden overflow-y-scroll">
+              <!-- Start Content -->
+             <div flex items-stretch>
+              <div class="flex items-stretch grid grid-cols-1 gap-5 mt-6 sm:grid-cols-2 lg:grid-cols-4">
+                <template x-for="i in 1" :key="i">
+                  <div class="p-4 transition-shadow border rounded-lg shadow-sm hover:shadow-lg">
+                    <div class="flex items-start justify-between">
+                      <div class="flex flex-col space-y-2">
+                        <span class="text-gray-400">Gasolina</span>
+                        <span class="text-lg font-semibold">100,221</span>
+                      </div>
+                      <div class="p-10 bg-gray-200 rounded-md"></div>
+                    </div>
+                  </div>
+                </template>
+              </div>
+              <div class="flex items-stretch grid grid-cols-1 gap-5 mt-6 sm:grid-cols-2 lg:grid-cols-4">
+                <template x-for="i in 1" :key="i">
+                  <div class="p-4 transition-shadow border rounded-lg shadow-sm hover:shadow-lg">
+                    <div class="flex items-start justify-between">
+                      <div class="flex flex-col space-y-2">
+                        <span class="text-gray-400">Diesel</span>
+                        <span class="text-lg font-semibold">100,221</span>
+                      </div>
+                      <div class="p-10 bg-gray-200 rounded-md"></div>
+                    </div>
+                  </div>
+                </template>
+              </div>
+            </div>
+
+              <!-- Table see (https://tailwindui.com/components/application-ui/lists/tables) -->
+              <h3 class="mt-6 text-xl">Gasolineras</h3>
+              <div class="flex flex-col mt-6">
+                <div class="-my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
+                  <div class="inline-block min-w-full py-2 align-middle sm:px-6 lg:px-8">
+                    <div class="overflow-hidden border-b border-gray-200 rounded-md shadow-md">
+                      <table class="min-w-full overflow-x-scroll divide-y divide-gray-200">
+                        <thead class="bg-gray-50">
+                          <tr>
+                            <th
+                              scope="col"
+                              class="px-6 py-3 text-xs font-medium tracking-wider text-left text-gray-500 uppercase"
+                            >
+                              Nombre
+                            </th>
+                            <th
+                              scope="col"
+                              class="px-6 py-3 text-xs font-medium tracking-wider text-center text-gray-500 uppercase"
+                            >
+                              Gasolina
+                            </th>
+                            <th
+                              scope="col"
+                              class="px-6 py-3 text-xs font-medium tracking-wider text-center text-gray-500 uppercase"
+                            >
+                              Diesel
+                            </th>
+                            <th
+                              scope="col"
+                              class="px-6 py-3 text-xs font-medium tracking-wider text-center text-gray-500 uppercase"
+                            >
+                              RG
+                            </th>
+                            <th scope="col" class="relative px-6 py-3">
+                              <span class="sr-only">Ubicación</span>
+                            </th>
+                          </tr>
+                        </thead>
+                        <tbody class="bg-white divide-y divide-gray-200">
+                          <template x-for="i in 1" :key="i">
+                            <tr class="transition-all hover:bg-gray-100 hover:shadow-lg">
+                              <td class="px-6 py-4 whitespace-nowrap">
+                                <div class="flex items-center">
+                                  <div class="flex-shrink-0 w-10 h-10">
+                                    <img
+                                      class="w-10 h-10 rounded-full"
+                                      src="https://avatars0.githubusercontent.com/u/57622665?s=460&u=8f581f4c4acd4c18c33a87b3e6476112325e8b38&v=4"
+                                      alt=""
+                                    />
+                                  </div>
+                                  <div class="ml-4">
+                                    <div class="text-sm font-medium text-gray-900">Ahmed Kamel</div>
+                                  </div>
+                                </div>
+                              </td>
+                              <td class="px-6 py-4 whitespace-nowrap text-center ">
+                                <div class="px-6 py-4 text-sm text-gray-500 whitespace-nowrap text-lg font-serif">12</div>
+                              </td>
+                              <td class="px-6 py-4 whitespace-nowrap text-center">
+                                <div class="px-6 py-4 text-sm text-gray-500 whitespace-nowrap text-lg font-serif">32</div>
+                              </td>
+                              <td class="px-6 py-4 text-sm text-gray-500 whitespace-nowrap text-center text-lg font-serif">20</td>
+                              <td class="px-6 py-4 text-sm font-medium text-right whitespace-nowrap ">
+                                <a href="#" class="text-indigo-600 hover:text-indigo-900 "><img src="../logos/maps.png" alt="ubicacion" title="ubicación" width="50"></a>
+                              </td>
+                            </tr>
+                          </template>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </main>
+
+              <!-- Settings Panel Content ... -->
+            </div>
+          </div>
+        </div>
+        <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.7.3/dist/alpine.min.js" defer></script>
+        <script>
+          const setup = () => {
+            return {
+              loading: true,
+              isSidebarOpen: false,
+              toggleSidbarMenu() {
+                this.isSidebarOpen = !this.isSidebarOpen
+              },
+              isSettingsPanelOpen: false,
+              isSearchBoxOpen: false,
+            }
+          }
+        </script>
+    </div>
+</body>
+</html>
