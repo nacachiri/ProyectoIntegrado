@@ -697,7 +697,7 @@ DROP TABLE IF EXISTS `login`;
 CREATE TABLE `login` (
   `id` int(11) NOT NULL,
   `id_user` int(11) NOT NULL,
-  `fecha/hora` datetime NOT NULL
+  `fechaHora` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
