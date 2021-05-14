@@ -37,7 +37,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     spanMensajeAlerta.innerHTML = 'Se ha registrado correctamente';
 
                     setTimeout(() => {
-                        window.location.href = './public/index.php';
+                        window.location.href = '/';
                     }, 2500);
                 
                 }else{
