@@ -1,24 +1,30 @@
 document.addEventListener("DOMContentLoaded", () => {
 
-    let botonEnviar = document.getElementById('saveForm');
+    let botonEnviar = document.getElementById('saveRegistro');
 
     botonEnviar.addEventListener('click', (e) => {
 
         e.preventDefault();
 
+        let name = document.getElementsByName('name');
+        let surnames = document.getElementsByName('surnames');
         let email = document.getElementsByName('email');
         let password = document.getElementsByName('password');
+        let dni = document.getElementsByName('dni');
+        let cp = document.getElementsByName('cp');
 
-        if (email[0].value != null && password[0].value != null && email[0].value != '' && password[0].value != '') {
+        if (name[0].value != null && surnames[0].value != null && name[0].value != '' && surnames[0].value != '' && email[0].value != null && password[0].value != null && email[0].value != '' && password[0].value != '' && dni[0].value != null && cp[0].value != null && dni[0].value != '' && cp[0].value != '') {
 
-            axios.post('../src/lecturaUsuario.php', {
+            axios.post('../src/registerUser.php', {
 
+                name : name[0].value,
+                surnames : surnames[0].value,
                 password : password[0].value,
                 email : email[0].value,
+                dni : dni[0].value,
+                cp : cp[0].value,
     
             }).then((response) => {
-                
-                console.log(response.data);
     
                 if (response.data == 1) {
 
@@ -28,11 +34,11 @@ document.addEventListener("DOMContentLoaded", () => {
                     divAlerta.className = 'border text-green-700 px-4 py-3 rounded relative bg-green-100 border-green-400';
                     
                     errorStrong.innerHTML = 'OK!'
-                    spanMensajeAlerta.innerHTML = 'Se ha loggeado correctamente';
+                    spanMensajeAlerta.innerHTML = 'Se ha registrado correctamente';
 
                     setTimeout(() => {
                         window.location.href = 'index.php';
-                    }, 1500);
+                    }, 2500);
                 
                 }else{
 

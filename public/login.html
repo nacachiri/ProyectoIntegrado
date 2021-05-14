@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.1.2/tailwind.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"></script>
     <script src="js/login.js"></script>
-    <title>Document</title>
+    <title>CoinFuel | Login</title>
 </head>
 <body class="">
     <div class="flex mx-auto h-screen h-full justify-center items-center">
@@ -19,6 +19,16 @@
                 <div class="mb-4">
                     <img class="w-full h-full" src="Logo/logoConLetras.png" alt="Workflow">
                 </div>
+
+                 <!-- div alerta  -->
+                 <div class="mb-4">
+                    <div class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative hidden" id="divAlerta" role="alert">
+                        <strong class="font-bold" id="errorStrong">ERROR!</strong>
+                        <span class="block sm:inline" id="divMensajeError"></span>
+                    </div>
+                </div>
+                <!-- acaba div alerta -->
+
                 <div class="mb-4">
                     <label class="w-96 py-2 px-3 font-bold" for="email">Email Address</label>
                     <input class="shadow appearance-none border rounded-full py-2 px-4 block w-full text-grey-darker" name="email" type="email" placeholder="example@example.com" required>
@@ -29,22 +39,34 @@
                 </div>
 
                 <div>
-                    <input type="submit" id="saveForm" class="transition duration-700 transform hover:-translate-y-1 hover:scale-200 ease-in-out mx-auto flex items-stretch rounded-full py-2 px-4 block  w-full flex justify-center py-2 px-4 border font-bold text-lg text-white rounded-md bg-yellow-400 hover:bg-gray-500" value="Login"></input>
+                    <input type="submit" id="saveForm" class="cursor-pointer transition duration-700 transform hover:-translate-y-1 hover:scale-200 ease-in-out mx-auto flex items-stretch rounded-full py-2 px-4 block  w-full flex justify-center py-2 px-4 border font-bold text-lg text-white rounded-md bg-yellow-400 hover:bg-gray-500" value="Login"></input>
+                </div>
+
+                <div class="mt-4 flex items-center justify-between">
+                    <span class="border-b w-1/5 md:w-1/4"></span>
+                    <span class="text-xs text-gray-500 uppercase">or sign up</span>
+                    <span class="border-b w-1/5 md:w-1/4"></span>
+                </div>
+                <div class="mt-4">
+                    <div class="mt-4 flex items-center justify-between">
+                        <span class="w-full text-md text-center text-blue-500 font-semibold italic cursor-pointer" onclick="register()">¿No tienes cuanta? Registrate</span>
+                    </div>
                 </div>
 
             </div>
                 
         </div>
     </div>
-
-
-
-
-
-
-
-
-
     </div>
 </body>
+<script> 
+    
+    register = () => {
+
+        window.location.href = 'registro.html';
+
+    }
+
+</script>
+
 </html>
