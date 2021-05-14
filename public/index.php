@@ -3,7 +3,7 @@
 
     if ($_SESSION['logged'] == false) {
         
-        header('location:login.html');
+        header('location:./public/login.html');
 
     }
     
