@@ -31,7 +31,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     spanMensajeAlerta.innerHTML = 'Se ha loggeado correctamente';
 
                     setTimeout(() => {
-                        window.location.href = './public/index.php';
+                        window.location.href = '/';
                     }, 1500);
                 
                 }else{
