@@ -4,7 +4,7 @@
        
         public function loginUser($arrDatos){
             
-            if (!empty($arrDatos['email']) && !empty($arrDatos['password'])) {
+            if (!empty($arrDatos['email']) && !empty($arrDatos['password']) && isset($arrDatos['email']) && isset($arrDatos['password'])) {
 
                 $conn = $this->getConn();
 
@@ -14,17 +14,24 @@
                 $query = $conn->query($sql);
                 $user = $query->fetch_assoc();
 
-               
+                if (isset($user['email']) && isset($user['password'])) {
+                    
+                    if (password_verify($arrDatos['password'], $user['password']) && $arrDatos['email'] == $user['email']) {
 
-                if (password_verify($arrDatos['password'], $user['password']) && $arrDatos['email'] == $user['email']) {
-
-                    session_start();
-                    $_SESSION['logged'] = true;
-                    $this->logUser($arrDatos['email']);
-                    return true;
+                        session_start();
+                        $_SESSION['logged'] = true;
+                        $this->logUser($arrDatos['email']);
+                        return true;
+    
+                    } else {
+    
+                        $_SESSION['logged'] = false;
+                        return 'El email y/o la contraseña son erroneos';
+    
+                    }
 
                 } else {
-
+    
                     $_SESSION['logged'] = false;
                     return 'El email y/o la contraseña son erroneos';
 
