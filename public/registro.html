@@ -13,74 +13,74 @@
 
 <div class="flex mx-auto h-screen h-full justify-center items-center">
     <div class="flex bg-white rounded-lg shadow-lg mx-auto max-w-sm lg:max-w-4xl justify-center items-center">
-            <div class="block w-full">
-                <img class="w-full h-full" src="Logo/logoConLetras.png" alt="Workflow">
+        <div class="block w-full">
+            <img class="w-full h-full" src="Logo/logoConLetras.png" alt="Workflow">
+        </div>
+<div class="w-full h-full p-8">
+        <h2 class="text-2xl font-semibold text-gray-700 text-center mb-4">Welcome back!</h2>
+        
+        <!-- div alerta  -->
+        <div class="">
+            <div class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative hidden" id="divAlerta" role="alert">
+                <strong class="font-bold" id="errorStrong">ERROR!</strong>
+                <span class="block sm:inline" id="divMensajeError"></span>
             </div>
-        <div class="w-full h-full p-8">
-                <h2 class="text-2xl font-semibold text-gray-700 text-center mb-4">Welcome back!</h2>
-                
-                <!-- div alerta  -->
-                <div class="">
-                    <div class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative hidden" id="divAlerta" role="alert">
-                        <strong class="font-bold" id="errorStrong">ERROR!</strong>
-                        <span class="block sm:inline" id="divMensajeError"></span>
-                    </div>
-                </div>
-                <!-- acaba div alerta -->
+        </div>
+        <!-- acaba div alerta -->
 
-                <div class="mt-4 -mx-3 md:flex mb-4">
-                <div class="md:w-1/2 px-3 mb-6 md:mb-0">
-                    <label class="w-96 py-2 px-3 font-bold " for="name">
-                    Name
-                    </label>
-                    <input class="shadow appearance-none border rounded-full py-2 px-4 block w-full text-grey-darker" id="name" name="name" type="text" placeholder="Jose">
+        <div class="mt-4 -mx-3 md:flex mb-4">
+        <div class="md:w-1/2 px-3 mb-6 md:mb-0">
+            <label class="w-96 py-2 px-3 font-bold " for="name">
+            Name
+            </label>
+            <input class="shadow appearance-none border rounded-full py-2 px-4 block w-full text-grey-darker" id="name" name="name" type="text" placeholder="Jose">
 
-                </div>
-                <div class="md:w-1/2 px-3">
-                    <label class="w-96 py-2 px-3 font-bold  " for="surnames">
-                    Surnames
-                    </label>
-                    <input class="shadow appearance-none border rounded-full py-2 px-4 block w-full text-grey-darker" id="surnames" name="surnames" type="text" placeholder="Sanchez Perez">
-                </div>
-                </div>
-                <div class="mb-4">
-                    <div class="mb-4">
-                        <label class="w-96 py-2 px-3 font-bold" for="email">
-                            Email
-                        </label>
-                        <input class="shadow appearance-none border rounded-full py-2 px-4 block w-full text-grey-darker"
-                            id="email"
-                            type="email"
-                            name="email"
-                            placeholder="example@example.es"
-                        />
-                    </div>
-                <div class="-mx-3 md:flex mb-4">
-                <div class="md:w-full px-3">
-                    <label class="w-96 py-2 px-3 font-bold" for="password">
-                    Password
-                    </label>
-                    <input class="shadow appearance-none border rounded-full py-2 px-4 block w-full text-grey-darker" id="password" name="password" type="password" placeholder="***********">
-                </div>
-                </div>
-                <div class="-mx-3 md:flex mb-2">
-                <div class="md:w-1/2 px-3 mb-6 md:mb-0">
-                    <label class="w-96 py-2 px-3 font-bold" for="dni">
-                    DNI
-                    </label>
-                    <input class="shadow appearance-none border rounded-full py-2 px-4 block w-full text-grey-darker" id="dni" type="text" name="dni" placeholder="00000000X">
-                </div>
-                <div class="md:w-1/2 px-3">
-                    <label class="w-96 py-2 px-3 font-bold" for="cp">
-                    CP
-                    </label>
-                    <input class="shadow appearance-none border rounded-full py-2 px-4 block w-full text-grey-darker" id="cp" type="text" name="cp" placeholder="0000">
-                </div>
-                </div>
-                <BR>
-                <div>
-                    <input type="submit" id="saveRegistro" class="cursor-pointer transition duration-700 transform hover:-translate-y-1 hover:scale-200 ease-in-out mx-auto flex items-stretch rounded-full py-2 px-4 block  w-full flex justify-center text-bold py-2 px-4 border font-bold text-lg text-white font-medium rounded-md bg-yellow-400 hover:bg-gray-500" value="Registrarse"></input>
-                </div>
+        </div>
+        <div class="md:w-1/2 px-3">
+            <label class="w-96 py-2 px-3 font-bold  " for="surnames">
+            Surnames
+            </label>
+            <input class="shadow appearance-none border rounded-full py-2 px-4 block w-full text-grey-darker" id="surnames" name="surnames" type="text" placeholder="Sanchez Perez">
+        </div>
+        </div>
+        <div class="mb-4">
+            <div class="mb-4">
+                <label class="w-96 py-2 px-3 font-bold" for="email">
+                    Email
+                </label>
+                <input class="shadow appearance-none border rounded-full py-2 px-4 block w-full text-grey-darker"
+                    id="email"
+                    type="email"
+                    name="email"
+                    placeholder="example@example.es"
+                />
+            </div>
+        <div class="-mx-3 md:flex mb-4">
+        <div class="md:w-full px-3">
+            <label class="w-96 py-2 px-3 font-bold" for="password">
+            Password
+            </label>
+            <input class="shadow appearance-none border rounded-full py-2 px-4 block w-full text-grey-darker" id="password" name="password" type="password" placeholder="***********">
+        </div>
+        </div>
+        <div class="-mx-3 md:flex mb-2">
+        <div class="md:w-1/2 px-3 mb-6 md:mb-0">
+            <label class="w-96 py-2 px-3 font-bold" for="dni">
+            DNI
+            </label>
+            <input class="shadow appearance-none border rounded-full py-2 px-4 block w-full text-grey-darker" id="dni" type="text" name="dni" placeholder="00000000X">
+        </div>
+        <div class="md:w-1/2 px-3">
+            <label class="w-96 py-2 px-3 font-bold" for="cp">
+            CP
+            </label>
+            <input class="shadow appearance-none border rounded-full py-2 px-4 block w-full text-grey-darker" id="cp" type="text" name="cp" placeholder="0000">
+        </div>
+        </div>
+        <BR>
+        <div>
+            <input type="submit" id="saveRegistro" class="cursor-pointer transition duration-700 transform hover:-translate-y-1 hover:scale-200 ease-in-out mx-auto flex items-stretch rounded-full py-2 px-4 block  w-full flex justify-center text-bold py-2 px-4 border font-bold text-lg text-white font-medium rounded-md bg-yellow-400 hover:bg-gray-500" value="Registrarse"></input>
+        </div>
     </div>
 </div>
 </body>
