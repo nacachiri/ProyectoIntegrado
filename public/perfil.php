@@ -16,7 +16,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.1.2/tailwind.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"></script>
     <script src="js/perfil.js"></script>
@@ -26,19 +25,6 @@
 <body>
   <div>
     <div class="flex h-screen overflow-y-hidden bg-white" x-data="setup()" x-init="$refs.loading.classList.add('hidden')">
-      <!-- Loading screen -->
-      <div
-        x-ref="loading"
-        class="fixed inset-0 z-50 flex items-center justify-center text-white bg-black bg-opacity-50"
-        style="backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px)"
-      >
-        Loading.....
-      </div>
-        <!-- Sidebar footer -->
-        <div class="flex-shrink-0 p-0 border-t max-h-14">
-        </div>
-      </aside>
-
       <div class="flex flex-col flex-1 h-full overflow-hidden">
         <!-- Navbar -->
         <header class="flex-shrink-0 border-b">
@@ -47,8 +33,6 @@
               <div class="imagen"><img src="../logos/casa.png" alt="ubicacion" title="ubicación" width="20"></div>
           </button>
           <div class="text-2xl font-serif">volver</div>
-            <!-- Desktop search box -->
-            <div class="items-center hidden px-2 space-x-2 md:flex-1 md:flex md:mr-auto md:ml-5"></div>
             <!-- Navbar right -->
             <div class="relative flex items-center space-x-3">
               <!-- avatar button -->
@@ -159,7 +143,13 @@
                               scope="col"
                               class="px-6 py-3 text-xs font-medium tracking-wider text-center text-gray-500 uppercase"
                             >
-                              Gasolina
+                              Gasolina 95
+                            </th>
+                            <th
+                              scope="col"
+                              class="px-6 py-3 text-xs font-medium tracking-wider text-center text-gray-500 uppercase"
+                            >
+                              Gasolina 98
                             </th>
                             <th
                               scope="col"
@@ -171,51 +161,15 @@
                               scope="col"
                               class="px-6 py-3 text-xs font-medium tracking-wider text-center text-gray-500 uppercase"
                             >
-                              RG
+                              Diesel Plus
                             </th>
                             <th scope="col" class="relative px-6 py-3">
-                              <span class="sr-only text-gray-900">Ubicación</span>
+                              <span class="text-xs font-medium tracking-wider text-center text-gray-500 uppercase">Ubicación</span>
                             </th>
                           </tr>
                         </thead>
-                        <tbody class="bg-white divide-y divide-gray-200 ">
-                          <template x-for="i in 1" :key="i">
-                            <tr class="transition-all hover:bg-gray-100 hover:shadow-lg ">
-                              <td class="px-6 py-4 whitespace-nowrap ">
-                                <div class="flex items-center ">
-                                  <div class="flex-shrink-0 w-10 h-10">
-                                    <img
-                                      class="w-10 h-10 rounded-full"
-                                      src="https://avatars0.githubusercontent.com/u/57622665?s=460&u=8f581f4c4acd4c18c33a87b3e6476112325e8b38&v=4"
-                                      alt=""
-                                    />
-                                  </div>
-                                  <div class="ml-4">
-                                    <div class="text-sm text-xl font-serif text-gray-900">Ahmed Kamel</div>
-                                  </div>
-                                </div>
-                              </td>
-                              <td class="px-6 py-4 whitespace-nowrap text-center ">
-                                <div class="text-sm text-xl font-serif text-gray-900">Jose Soto Mico</div>
-                              </td>
-                              <td class="px-6 py-4 whitespace-nowrap text-center ">
-                                <div class="text-sm text-xl font-serif text-gray-900">Jose Soto Mico</div>
-                              </td>
-                              <td class="px-6 py-4 whitespace-nowrap text-center ">
-                                <div class="px-6 py-4 text-sm text-gray-500 whitespace-nowrap text-lg font-serif text-2x1">12/2/20</div>
-                              </td>
-                              <td class="px-6 py-4 whitespace-nowrap text-center ">
-                                <div class="px-6 py-4 text-sm text-gray-500 whitespace-nowrap text-lg font-serif text-3xl">12</div>
-                              </td>
-                              <td class="px-6 py-4 whitespace-nowrap text-center">
-                                <div class="px-6 py-4 text-sm text-gray-500 whitespace-nowrap text-lg font-serif text-3xl">11</div>
-                              </td>
-                              <td class="px-6 py-4 text-sm text-gray-500 whitespace-nowrap text-center text-lg font-serif text-3xl">20</td>
-                              <td class="px-6 py-4 text-sm font-medium text-right whitespace-nowrap ">
-                                <a href="#" class="text-indigo-600 hover:text-indigo-900 "><img src="imagenes/logoMaps.png" alt="ubicacion" title="ubicación" width="60"></a>
-                              </td>
-                            </tr>
-                          </template>
+                        <tbody class="bg-white divide-y divide-gray-200" id="tabla">
+                         
                         </tbody>
                       </table>
                     </div>

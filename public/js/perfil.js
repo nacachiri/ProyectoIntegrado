@@ -1,14 +1,14 @@
 {/* <tbody class="bg-white divide-y divide-gray-200" id="tabla">
     <tr class="transition-all hover:bg-gray-100 hover:shadow-lg ">
         <td class="px-6 py-4 whitespace-nowrap ">
-        <div class="flex items-center ">
-            <div class="flex-shrink-0 w-10 h-10">
-            <img class="w-10 h-10 rounded-full" src="" />
+            <div class="flex items-center ">
+                <div class="flex-shrink-0 w-10 h-10">
+                    <img class="w-10 h-10 rounded-full" src="" />
+                </div>
+                <div class="ml-4">
+                <div class="text-sm text-xl font-serif text-gray-900"></div>
+                </div>
             </div>
-            <div class="ml-4">
-            <div class="text-sm text-xl font-serif text-gray-900"></div>
-            </div>
-        </div>
         </td>
         <td class="px-6 py-4 whitespace-nowrap text-center ">
         <div class="text-sm text-xl font-serif text-gray-900"></div>
@@ -41,45 +41,136 @@ document.addEventListener("DOMContentLoaded", () => {
 
     });
 
-    function creacionTabla() {
+    function creacionTabla(arrDatos) {
 
         let tabla = document.getElementById('tabla');
 
-        let tr = document.createElement('tr');
+        for (gasolinera in arrDatos) {
 
-        tr.className = 'transition-all hover:bg-gray-100 hover:shadow-lg';
+            let tr = document.createElement('tr');
 
-        let tdLogoNombre = document.createElement('td');
-        tdLogoNombre.className = 'px-6 py-4 whitespace-nowrap';
+            tr.className = 'transition-all hover:bg-gray-100 hover:shadow-lg';  
+            tr.id = arrDatos[gasolinera].id;  
 
-        let tdLogodiv = document.createElement('div');
-        tdLogodiv.className = 'flex items-center';
-        let tdImagen = document.createElement('img');
-        tdImagen.className = 'w-10 h-10 rounded-full';
-        tdImagen.src = '';
+            // Esto es el td del Logo y nombre
 
-        let tdLogoNombrediv = document.createElement('div');
-        tdLogoNombrediv.className = 'text-sm text-xl font-serif text-gray-900';
+            let tdLogoNombre = document.createElement('td');
+            tdLogoNombre.className = 'px-6 py-4 whitespace-nowrap';
 
-        let tdMunicipio = document.createElement('td');
-        tdDireccion.className = 'px-6 py-4 whitespace-nowrap text-center';
+            // Esto es le div del logo y nombre
 
-        let tdHorario = document.createElement('td');
-        tdDireccion.className = 'px-6 py-4 whitespace-nowrap text-center';
+            let tdLogodiv = document.createElement('div');
+            tdLogodiv.className = 'flex items-center';
 
-        let tdGasolina = document.createElement('td');
-        tdDireccion.className = 'px-6 py-4 whitespace-nowrap text-center';
-
-        let tdDiesel = document.createElement('td');
-        tdDireccion.className = 'px-6 py-4 whitespace-nowrap text-center';
-
-        tdLogodiv.appendChild(tdImagen);
-        tdLogodiv.appendChild(tdLogoNombrediv);
-        tdLogoNombre.appendChild(tdLogodiv);
+            let divImagen = document.createElement('div');
+            divImagen.className = 'flex-shrink-0 w-10 h-10';
 
 
-        tr.appendChild(tdLogoNombre);
-        tabla.appendChild(tr);
+            let tdImagen = document.createElement('img');
+            tdImagen.className = 'w-10 h-10 rounded-full';
+            tdImagen.src = arrDatos[gasolinera].logo;
+
+            let tdLogoNombrediv = document.createElement('div');
+            tdLogoNombrediv.className = 'text-sm text-xl font-serif text-gray-900';
+            tdLogoNombrediv.innerHTML = arrDatos[gasolinera].nombre;
+
+            tdLogodiv.appendChild(divImagen);
+            tdLogodiv.appendChild(tdImagen);
+            tdLogodiv.appendChild(tdLogoNombrediv);
+            tdLogoNombre.appendChild(tdLogodiv);
+
+            // Esto es el td del Direccion
+
+            let tdDireccion = document.createElement('td');
+            tdDireccion.className = 'px-6 py-4 whitespace-nowrap text-center';
+            let tdDirecciondiv = document.createElement('div');
+            tdDirecciondiv.className = 'text-sm text-xl font-serif text-gray-900';
+            tdDirecciondiv.innerHTML = arrDatos[gasolinera].direccion;
+
+            tdDireccion.appendChild(tdDirecciondiv);
+
+            // Esto es el td del Municipio
+
+            let tdMunicipio = document.createElement('td');
+            tdMunicipio.className = 'px-6 py-4 whitespace-nowrap text-center';
+            let tdMunicipiodiv = document.createElement('div');
+            tdMunicipiodiv.className = 'text-sm text-xl font-serif text-gray-900';
+            tdMunicipiodiv.innerHTML = arrDatos[gasolinera].municipio;
+
+            tdMunicipio.appendChild(tdMunicipiodiv);
+
+            // Esto es el td del Horario
+
+            let tdHorario = document.createElement('td');
+            tdHorario.className = 'px-6 py-4 whitespace-nowrap text-center';
+            let tdHorariodiv = document.createElement('div');
+            tdHorariodiv.className = 'px-6 py-4 text-sm text-gray-500 whitespace-nowrap text-lg font-serif text-2x1';
+            tdHorariodiv.innerHTML = arrDatos[gasolinera].horario;
+
+            tdHorario.appendChild(tdHorariodiv);
+
+            // Esto es el td del Gasolina95
+
+            let tdGasolina = document.createElement('td');
+            tdGasolina.className = 'px-6 py-4 whitespace-nowrap text-center';
+            let tdGasolinadiv = document.createElement('div');
+            tdGasolinadiv.className = 'px-6 py-4 text-sm text-gray-500 whitespace-nowrap text-lg font-serif text-2x1';
+            tdGasolinadiv.innerHTML = arrDatos[gasolinera].gasolina95;
+
+            tdGasolina.appendChild(tdGasolinadiv);
+
+            // Esto es el td del Gasolina98
+
+            let tdGasolina98 = document.createElement('td');
+            tdGasolina98.className = 'px-6 py-4 whitespace-nowrap text-center';
+            let tdGasolina98div = document.createElement('div');
+            tdGasolina98div.className = 'px-6 py-4 text-sm text-gray-500 whitespace-nowrap text-lg font-serif text-2x1';
+            tdGasolina98div.innerHTML = arrDatos[gasolinera].gasolina98;
+
+            tdGasolina98.appendChild(tdGasolina98div);
+
+            // Esto es el td del Diesel
+
+            let tdDiesel = document.createElement('td');
+            tdDiesel.className = 'px-6 py-4 whitespace-nowrap text-center';
+            let tdDieseldiv = document.createElement('div');
+            tdDieseldiv.className = 'px-6 py-4 text-sm text-gray-500 whitespace-nowrap text-lg font-serif text-2x1';
+            tdDieseldiv.innerHTML = arrDatos[gasolinera].diesel;
+
+            tdDiesel.appendChild(tdDieseldiv);
+
+            // Esto es el td del DieselPlus
+
+            let tdDieselPlus = document.createElement('td');
+            tdDieselPlus.className = 'px-6 py-4 whitespace-nowrap text-center';
+            let tdDieselPlusdiv = document.createElement('div');
+            tdDieselPlusdiv.className = 'px-6 py-4 text-sm text-gray-500 whitespace-nowrap text-lg font-serif text-2x1';
+            tdDieselPlusdiv.innerHTML = arrDatos[gasolinera].diesel_premium;
+
+            tdDieselPlus.appendChild(tdDieselPlusdiv);
+
+            // Esto es el td del Ubicacion
+
+            let tdUbicacion = document.createElement('td');
+            tdUbicacion.className = 'px-6 py-4 whitespace-nowrap text-center';
+            let tdUbicaciondiv = document.createElement('div');
+            tdUbicaciondiv.className = 'px-6 py-4 text-sm text-gray-500 whitespace-nowrap text-lg font-serif text-2x1';
+
+            tdUbicacion.appendChild(tdUbicaciondiv);
+
+            tr.appendChild(tdLogoNombre);
+            tr.appendChild(tdDireccion);
+            tr.appendChild(tdMunicipio);
+            tr.appendChild(tdHorario);
+            tr.appendChild(tdGasolina);
+            tr.appendChild(tdGasolina98);
+            tr.appendChild(tdDiesel);
+            tr.appendChild(tdDieselPlus);
+            tr.appendChild(tdUbicacion);
+            
+            tabla.appendChild(tr);
+
+        }
 
     }
 
