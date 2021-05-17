@@ -108,7 +108,7 @@
         </div>
               <!-- Table see (https://tailwindui.com/components/application-ui/lists/tables) -->
               <h3 class="mt-20 ml-16 text-2xl font-serif">Gasolineras</h3>
-              <div class="flex flex-col mt-6 ml-16 mr-8">
+              <div class="flex flex-col">
                 <div class="-my-2 overflow-x-auto sm:-mx-6 lg:-mx-0 w-6/6">
                   <div class="inline-block min-w-full py-2 align-middle">
                     <div class="overflow-hidden border-b border-gray-200 rounded-md shadow-md">

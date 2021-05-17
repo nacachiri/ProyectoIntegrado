@@ -1,36 +1,5 @@
-{/* <tbody class="bg-white divide-y divide-gray-200" id="tabla">
-    <tr class="transition-all hover:bg-gray-100 hover:shadow-lg ">
-        <td class="px-6 py-4 whitespace-nowrap ">
-            <div class="flex items-center ">
-                <div class="flex-shrink-0 w-10 h-10">
-                    <img class="w-10 h-10 rounded-full" src="" />
-                </div>
-                <div class="ml-4">
-                <div class="text-sm text-xl font-serif text-gray-900"></div>
-                </div>
-            </div>
-        </td>
-        <td class="px-6 py-4 whitespace-nowrap text-center ">
-        <div class="text-sm text-xl font-serif text-gray-900"></div>
-        </td>
-        <td class="px-6 py-4 whitespace-nowrap text-center ">
-        <div class="text-sm text-xl font-serif text-gray-900"></div>
-        </td>
-        <td class="px-6 py-4 whitespace-nowrap text-center ">
-        <div class="px-6 py-4 text-sm text-gray-500 whitespace-nowrap text-lg font-serif text-x1">12/2/20</div>
-        </td>
-        <td class="px-6 py-4 whitespace-nowrap text-center ">
-        <div class="px-6 py-4 text-sm text-gray-500 whitespace-nowrap text-lg font-serif text-3xl">12</div>
-        </td>
-        <td class="px-6 py-4 whitespace-nowrap text-center">
-        <div class="px-6 py-4 text-sm text-gray-500 whitespace-nowrap text-lg font-serif text-3xl">11</div>
-        </td>
-        <td class="px-6 py-4 text-sm text-gray-500 whitespace-nowrap text-center text-lg font-serif text-3xl">20</td>
-        <td class="px-6 py-4 text-sm font-medium text-right whitespace-nowrap ">
-        <a href="#" class="text-indigo-600 hover:text-indigo-900 "><img src="../logos/maps.png" alt="ubicacion" title="ubicación" width="60"></a>
-        </td>
-    </tr>
-</tbody> */}
+
+
 
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -55,7 +24,7 @@ document.addEventListener("DOMContentLoaded", () => {
             // Esto es el td del Logo y nombre
 
             let tdLogoNombre = document.createElement('td');
-            tdLogoNombre.className = 'px-6 py-4 whitespace-nowrap';
+            tdLogoNombre.className = 'px-6 py-4 break-words';
 
             // Esto es le div del logo y nombre
 
@@ -63,18 +32,18 @@ document.addEventListener("DOMContentLoaded", () => {
             tdLogodiv.className = 'flex items-center';
 
             let divImagen = document.createElement('div');
-            divImagen.className = 'flex-shrink-0 w-10 h-10';
+            divImagen.className = 'flex-shrink-0 w-20 h-full';
 
 
             let tdImagen = document.createElement('img');
-            tdImagen.className = 'w-10 h-10 rounded-full';
+            tdImagen.className = 'w-full h-full';
             tdImagen.src = arrDatos[gasolinera].logo;
 
             let tdNombrediv = document.createElement('div');
             tdNombrediv.className = 'ml-4';
 
             let tdLogoNombrediv = document.createElement('div');
-            tdLogoNombrediv.className = 'text-sm text-xl font-serif text-gray-900';
+            tdLogoNombrediv.className = 'text-sm text-xl font-serif text-gray-900 ';
             tdLogoNombrediv.innerHTML = arrDatos[gasolinera].nombre;
 
             tdLogodiv.appendChild(divImagen);
@@ -86,7 +55,7 @@ document.addEventListener("DOMContentLoaded", () => {
             // Esto es el td del Direccion
 
             let tdDireccion = document.createElement('td');
-            tdDireccion.className = 'px-6 py-4 whitespace-nowrap text-center';
+            tdDireccion.className = 'px-6 py-4 lg:whitespace-nowrap text-center md:break-words';
             let tdDirecciondiv = document.createElement('div');
             tdDirecciondiv.className = 'text-sm text-x1 font-serif text-gray-900';
             tdDirecciondiv.innerHTML = arrDatos[gasolinera].direccion;
