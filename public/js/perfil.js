@@ -17,7 +17,7 @@
         <div class="text-sm text-xl font-serif text-gray-900"></div>
         </td>
         <td class="px-6 py-4 whitespace-nowrap text-center ">
-        <div class="px-6 py-4 text-sm text-gray-500 whitespace-nowrap text-lg font-serif text-2x1">12/2/20</div>
+        <div class="px-6 py-4 text-sm text-gray-500 whitespace-nowrap text-lg font-serif text-x1">12/2/20</div>
         </td>
         <td class="px-6 py-4 whitespace-nowrap text-center ">
         <div class="px-6 py-4 text-sm text-gray-500 whitespace-nowrap text-lg font-serif text-3xl">12</div>
@@ -70,13 +70,17 @@ document.addEventListener("DOMContentLoaded", () => {
             tdImagen.className = 'w-10 h-10 rounded-full';
             tdImagen.src = arrDatos[gasolinera].logo;
 
+            let tdNombrediv = document.createElement('div');
+            tdNombrediv.className = 'ml-4';
+
             let tdLogoNombrediv = document.createElement('div');
             tdLogoNombrediv.className = 'text-sm text-xl font-serif text-gray-900';
             tdLogoNombrediv.innerHTML = arrDatos[gasolinera].nombre;
 
             tdLogodiv.appendChild(divImagen);
-            tdLogodiv.appendChild(tdImagen);
-            tdLogodiv.appendChild(tdLogoNombrediv);
+            divImagen.appendChild(tdImagen);
+            tdLogodiv.appendChild(tdNombrediv);
+            tdNombrediv.appendChild(tdLogoNombrediv);
             tdLogoNombre.appendChild(tdLogodiv);
 
             // Esto es el td del Direccion
@@ -84,7 +88,7 @@ document.addEventListener("DOMContentLoaded", () => {
             let tdDireccion = document.createElement('td');
             tdDireccion.className = 'px-6 py-4 whitespace-nowrap text-center';
             let tdDirecciondiv = document.createElement('div');
-            tdDirecciondiv.className = 'text-sm text-xl font-serif text-gray-900';
+            tdDirecciondiv.className = 'text-sm text-x1 font-serif text-gray-900';
             tdDirecciondiv.innerHTML = arrDatos[gasolinera].direccion;
 
             tdDireccion.appendChild(tdDirecciondiv);
@@ -104,7 +108,7 @@ document.addEventListener("DOMContentLoaded", () => {
             let tdHorario = document.createElement('td');
             tdHorario.className = 'px-6 py-4 whitespace-nowrap text-center';
             let tdHorariodiv = document.createElement('div');
-            tdHorariodiv.className = 'px-6 py-4 text-sm text-gray-500 whitespace-nowrap text-lg font-serif text-2x1';
+            tdHorariodiv.className = 'px-6 py-4 text-sm text-gray-500 whitespace-nowrap text-lg font-serif text-x1';
             tdHorariodiv.innerHTML = arrDatos[gasolinera].horario;
 
             tdHorario.appendChild(tdHorariodiv);
@@ -114,7 +118,7 @@ document.addEventListener("DOMContentLoaded", () => {
             let tdGasolina = document.createElement('td');
             tdGasolina.className = 'px-6 py-4 whitespace-nowrap text-center';
             let tdGasolinadiv = document.createElement('div');
-            tdGasolinadiv.className = 'px-6 py-4 text-sm text-gray-500 whitespace-nowrap text-lg font-serif text-2x1';
+            tdGasolinadiv.className = 'px-6 py-4 text-sm text-gray-500 whitespace-nowrap text-lg font-serif text-x1';
             tdGasolinadiv.innerHTML = arrDatos[gasolinera].gasolina95;
 
             tdGasolina.appendChild(tdGasolinadiv);
@@ -124,7 +128,7 @@ document.addEventListener("DOMContentLoaded", () => {
             let tdGasolina98 = document.createElement('td');
             tdGasolina98.className = 'px-6 py-4 whitespace-nowrap text-center';
             let tdGasolina98div = document.createElement('div');
-            tdGasolina98div.className = 'px-6 py-4 text-sm text-gray-500 whitespace-nowrap text-lg font-serif text-2x1';
+            tdGasolina98div.className = 'px-6 py-4 text-sm text-gray-500 whitespace-nowrap text-lg font-serif text-x1';
             tdGasolina98div.innerHTML = arrDatos[gasolinera].gasolina98;
 
             tdGasolina98.appendChild(tdGasolina98div);
@@ -134,7 +138,7 @@ document.addEventListener("DOMContentLoaded", () => {
             let tdDiesel = document.createElement('td');
             tdDiesel.className = 'px-6 py-4 whitespace-nowrap text-center';
             let tdDieseldiv = document.createElement('div');
-            tdDieseldiv.className = 'px-6 py-4 text-sm text-gray-500 whitespace-nowrap text-lg font-serif text-2x1';
+            tdDieseldiv.className = 'px-6 py-4 text-sm text-gray-500 whitespace-nowrap text-lg font-serif text-x1';
             tdDieseldiv.innerHTML = arrDatos[gasolinera].diesel;
 
             tdDiesel.appendChild(tdDieseldiv);
@@ -144,7 +148,7 @@ document.addEventListener("DOMContentLoaded", () => {
             let tdDieselPlus = document.createElement('td');
             tdDieselPlus.className = 'px-6 py-4 whitespace-nowrap text-center';
             let tdDieselPlusdiv = document.createElement('div');
-            tdDieselPlusdiv.className = 'px-6 py-4 text-sm text-gray-500 whitespace-nowrap text-lg font-serif text-2x1';
+            tdDieselPlusdiv.className = 'px-6 py-4 text-sm text-gray-500 whitespace-nowrap text-lg font-serif text-x1';
             tdDieselPlusdiv.innerHTML = arrDatos[gasolinera].diesel_premium;
 
             tdDieselPlus.appendChild(tdDieselPlusdiv);
@@ -154,7 +158,7 @@ document.addEventListener("DOMContentLoaded", () => {
             let tdUbicacion = document.createElement('td');
             tdUbicacion.className = 'px-6 py-4 whitespace-nowrap text-center';
             let tdUbicaciondiv = document.createElement('div');
-            tdUbicaciondiv.className = 'px-6 py-4 text-sm text-gray-500 whitespace-nowrap text-lg font-serif text-2x1';
+            tdUbicaciondiv.className = 'px-6 py-4 text-sm text-gray-500 whitespace-nowrap text-lg font-serif text-x1';
 
             tdUbicacion.appendChild(tdUbicaciondiv);
 
