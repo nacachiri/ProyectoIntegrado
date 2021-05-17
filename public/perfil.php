@@ -7,6 +7,8 @@
 
     }
 
+    $_SESSION['usuario'];
+
 ?>
 
 <!DOCTYPE html>
@@ -74,48 +76,49 @@
             <!-- Main content -->
             <main class="flex-1 max-h-full p-5 overflow-hidden overflow-y-scroll">
               <!-- Start Content -->
-             <div flex items-stretch >
-              <div class="flex items-stretch grid grid-cols-1 gap-2 mt-0 sm:grid-cols-1 lg:grid-cols-4">
-                <template x-for="i in 1" :key="i">
-                  <div class="p-4 transition-shadow border rounded-lg shadow-sm hover:shadow-lg ml-32 w-3/5">
-                    <div class="flex items-start justify-between">
-                      <div class="flex flex-col space-y-2">
-                        <span class="text-gray-600">Gasolina</span>
-                        <span class="text-lg font-semibold">100,31</span>
-                      </div>
-                      <div class="imagen"><img src="../logos/maps.png" alt="ubicacion" title="ubicación" width="60"></div>
+              <div class=" py-6 flex flex-col justify-center sm:py-12">
+                <div class="grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-4 px-4">
+                  <!-- SMALL CARD ROUNDED -->
+                  <div class="bg-gray-100 border-green-700 dark:bg-gray-800 bg-opacity-95 border-opacity-60 | p-4 border-solid rounded-3xl border-2 | flex justify-around cursor-pointer | hover:bg-green-700 dark:hover:bg-green-700 hover:border-transparent | transition-colors duration-500">
+                    <img class="w-16 h-16 object-cover" src="https://milenyo.net/wp-content/uploads/2020/05/netflix-n-logo-png.png" alt="" />
+                    <div class="flex flex-col justify-center">
+                      <p class="text-gray-900 dark:text-gray-300 font-semibold">Gasolina 95</p>
+                      <p class="text-black dark:text-gray-100 text-justify font-semibold">1,356 €</p>
                     </div>
                   </div>
-                </template>
-                <div class="p-4 transition-shadow border rounded-lg shadow-sm hover:shadow-lg ml-24 w-3/5">
-                    <div class="flex items-start justify-between">
-                      <div class="flex flex-col space-y-2">
-                        <span class="text-gray-600">Diesel</span>
-                        <span class="text-lg font-semibold">100,21</span>
-                      </div>
-                      <div class="imagen"><img src="../logos/maps.png" alt="ubicacion" title="ubicación" width="60"></div>
+                  <!-- END SMALL CARD ROUNDED -->
+
+                  <!-- SMALL CARD ROUNDED -->
+                  <div class="bg-gray-100 border-green-300 dark:bg-gray-800 bg-opacity-95 border-opacity-60 | p-4 border-solid rounded-3xl border-2 | flex justify-around cursor-pointer | hover:bg-green-200 dark:hover:bg-red-600 hover:border-transparent | transition-colors duration-500">
+                    <img class="w-16 h-16 object-cover" src="https://milenyo.net/wp-content/uploads/2020/05/netflix-n-logo-png.png" alt="" />
+                    <div class="flex flex-col justify-center">
+                      <p class="text-gray-900 dark:text-gray-300 font-semibold">Gasolina 98</p>
+                      <p class="text-black dark:text-gray-100 text-justify font-semibold">1,356 €</p>
                     </div>
                   </div>
-                  <div class="p-4 transition-shadow border rounded-lg shadow-sm hover:shadow-lg ml-16 w-3/5">
-                    <div class="flex items-start justify-between">
-                      <div class="flex flex-col space-y-2">
-                        <span class="text-gray-600">RG</span>
-                        <span class="text-lg font-semibold">100,22</span>
-                      </div>
-                      <div class="imagen"><img src="../logos/maps.png" alt="ubicacion" title="ubicación" width="60"></div>
+                  <!-- END SMALL CARD ROUNDED -->
+
+                  <!-- SMALL CARD ROUNDED -->
+                  <div class="bg-gray-100 border-gray-400 dark:bg-gray-800 bg-opacity-95 border-opacity-60 | p-4 border-solid rounded-3xl border-2 | flex justify-around cursor-pointer | hover:bg-gray-400 dark:hover:bg-yellow-600 hover:border-transparent | transition-colors duration-500">
+                    <img class="w-16 h-16 object-cover" src="https://milenyo.net/wp-content/uploads/2020/05/netflix-n-logo-png.png" alt="" />
+                    <div class="flex flex-col justify-center">
+                      <p class="text-gray-900 dark:text-gray-300 font-semibold">Diesel</p>
+                      <p class="text-black dark:text-gray-100 text-justify font-semibold">1,356 €</p>
                     </div>
                   </div>
-                  <div class="p-4 transition-shadow border rounded-lg shadow-sm hover:shadow-lg ml-8 w-3/5">
-                    <div class="flex items-start justify-between">
-                      <div class="flex flex-col space-y-2">
-                        <span class="text-gray-600">RG</span>
-                        <span class="text-lg font-semibold">100,22</span>
-                      </div>
-                      <div class="imagen"><img src="../logos/maps.png" alt="ubicacion" title="ubicación" width="60"></div>
+                  <!-- END SMALL CARD ROUNDED -->
+
+                  <!-- SMALL CARD ROUNDED -->
+                  <div class="bg-gray-100 border-gray-800 dark:bg-gray-800 bg-opacity-95 border-opacity-60 | p-4 border-solid rounded-3xl border-2 | flex justify-around cursor-pointer | hover:bg-gray-800 dark:hover:bg-green-600 hover:border-transparent | transition-colors duration-500">
+                    <img class="w-16 h-16 object-cover" src="https://milenyo.net/wp-content/uploads/2020/05/netflix-n-logo-png.png" alt="" />
+                    <div class="flex flex-col justify-center">
+                      <p class="text-white dark:text-gray-300 font-semibold">Diesel Premium</p>
+                      <p class="text-white dark:text-gray-100 text-justify font-semibold">1,356 €</p>
                     </div>
                   </div>
+                  <!-- END SMALL CARD ROUNDED -->
+                </div>
               </div>
-            </div>
               <!-- Table see (https://tailwindui.com/components/application-ui/lists/tables) -->
               <h3 class="mt-20 ml-16 text-2xl font-serif">Gasolineras</h3>
               <div class="flex flex-col mt-6 ml-16 mr-8">
