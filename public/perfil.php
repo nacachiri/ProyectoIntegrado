@@ -27,13 +27,11 @@
     <div class="flex h-screen overflow-y-hidden bg-white" x-data="setup()" x-init="$refs.loading.classList.add('hidden')">
       <div class="flex flex-col flex-1 h-full overflow-hidden">
         <!-- Navbar -->
-        <header class="flex-shrink-0 border-b">
+        <header class="flex-shrink-0 border-b bg-gray-700">
           <div class="flex items-center justify-between p-2">
-            <button class="bg-blue-light rounded p-2 font-bold text-white text-sm mr-2 flex">
-              <div class="imagen"><img src="../logos/casa.png" alt="ubicacion" title="ubicación" width="20"></div>
-          </button>
-          <div class="text-2xl font-serif">volver</div>
+            <div class="text-xl font-serif cursor-pointer text-white" id="botonVolver"><img class="w-8 h-10 inline-block" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZlcnNpb249IjEuMSIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHhtbG5zOnN2Z2pzPSJodHRwOi8vc3ZnanMuY29tL3N2Z2pzIiB3aWR0aD0iNTEyIiBoZWlnaHQ9IjUxMiIgeD0iMCIgeT0iMCIgdmlld0JveD0iMCAwIDY0IDY0IiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCA1MTIgNTEyIiB4bWw6c3BhY2U9InByZXNlcnZlIiBjbGFzcz0iIj48Zz48cGF0aCB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGQ9Im01NCAzMGgtMzkuODk5bDE1LjI3OC0xNC41NTJjLjgtLjc2Mi44MzEtMi4wMjguMDY5LTIuODI4LS43NjEtLjc5OS0yLjAyNy0uODMxLTIuODI4LS4wNjlsLTE3LjQ0OCAxNi42MmMtLjc1NS43NTYtMS4xNzIgMS43Ni0xLjE3MiAyLjgyOSAwIDEuMDY4LjQxNyAyLjA3MyAxLjIwNyAyLjg2MmwxNy40MTQgMTYuNTg2Yy4zODcuMzY5Ljg4My41NTIgMS4zNzkuNTUyLjUyOCAwIDEuMDU2LS4yMDggMS40NDktLjYyMS43NjItLjguNzMxLTIuMDY1LS4wNjktMi44MjdsLTE1LjM0Mi0xNC41NTJoMzkuOTYyYzEuMTA0IDAgMi0uODk2IDItMnMtLjg5Ni0yLTItMnoiIGZpbGw9IiNmZmZmZmYiIGRhdGEtb3JpZ2luYWw9IiMwMDAwMDAiIHN0eWxlPSIiIGNsYXNzPSIiPjwvcGF0aD48L2c+PC9zdmc+" /><span class="align-middle"> Volver</span></div>
             <!-- Navbar right -->
+            
             <div class="relative flex items-center space-x-3">
               <!-- avatar button -->
               <div class="relative" x-data="{ isOpen: false }">
@@ -49,14 +47,15 @@
                 <div class="absolute right-0 p-1 bg-green-400 border border-white rounded-full bottom-3"></div>
 
                 <!-- Dropdown card -->
+                <!-- Dropdown card -->
                 <div
                   @click.away="isOpen = false"
                   x-show.transition.opacity="isOpen"
                   class="absolute mt-1 transform -translate-x-40 bg-white rounded-md shadow-lg min-w-max"
                 >
                   <div class="flex flex-col p-4 space-y-1 font-medium border-b">
-                    <span class="text-gray-800">Ahmed Kamel</span>
-                    <span class="text-sm text-gray-400">ahmed.kamel@example.com</span>
+                    <span class="text-gray-800">Nacho Calomarde</span>
+                    <span class="text-sm text-gray-400">nacho@proyectoalfa.es</span>
                   </div>
                 </div>
               </div>
@@ -68,46 +67,45 @@
           <!-- Start Content -->
          <div class="" >
           <div class="flex items-stretch grid gap-2 mt-2 sm:grid-cols-1 lg:grid-cols-4">
-              <div class="p-4 transition-shadow border rounded-lg shadow-sm hover:shadow-lg ">
+              <div class="p-4 transition-shadow border hover:border-green-600 rounded-lg shadow-sm hover:shadow-lg">
                 <div class="flex items-start justify-between">
                   <div class="flex flex-col space-y-2">
-                    <span class="text-gray-600">Gasolina</span>
-                    <span class="text-lg font-semibold">100,31</span>
+                    <span class="text-gray-600">Gasolina 95</span>
+                    <span class="text-lg font-semibold">1,3199 </span>
                   </div>
-                  <div class="imagen"><img src="imagenes/logoMaps.png" alt="ubicacion" title="ubicación" width="60"></div>
+                  <div class="imagen"><img src="imagenes/tipoGasolinaIconos/E5.png" alt="ubicacion" title="ubicación" width="60"></div>
                 </div>
               </div>
-            <div class="p-4 transition-shadow border rounded-lg shadow-sm hover:shadow-lg ">
+            <div class="p-4 transition-shadow border rounded-lg shadow-sm hover:border-green-300 hover:shadow-lg ">
                 <div class="flex items-start justify-between">
                   <div class="flex flex-col space-y-2">
-                    <span class="text-gray-600">Gasolina95</span>
-                    <span class="text-lg font-semibold">100,21</span>
+                    <span class="text-gray-600">Gasolina 98</span>
+                    <span class="text-lg font-semibold">1,3199</span>
                   </div>
-                  <div class="imagen"><img src="imagenes/logoMaps.png" alt="ubicacion" title="ubicación" width="60"></div>
+                  <div class="imagen"><img src="imagenes/tipoGasolinaIconos/E10.png" alt="ubicacion" title="ubicación" width="60"></div>
                 </div>
               </div>
-              <div class="p-4 transition-shadow border rounded-lg shadow-sm hover:shadow-lg ">
+              <div class="p-4 transition-shadow border rounded-lg shadow-sm hover:shadow-lg hover:border-gray-900">
                 <div class="flex items-start justify-between">
                   <div class="flex flex-col space-y-2">
                     <span class="text-gray-600">Diesel</span>
-                    <span class="text-lg font-semibold">100,22</span>
+                    <span class="text-lg font-semibold">1,3199</span>
                   </div>
-                  <div class="imagen"><img src="imagenes/logoMaps.png" alt="ubicacion" title="ubicación" width="60"></div>
+                  <div class="imagen"><img src="imagenes/tipoGasolinaIconos/B7.png" alt="ubicacion" title="ubicación" width="60"></div>
                 </div>
               </div>
-              <div class="p-4 transition-shadow border rounded-lg shadow-sm hover:shadow-lg ">
+              <div class="p-4 transition-shadow border rounded-lg shadow-sm hover:shadow-lg hover:border-gray-400">
                 <div class="flex items-start justify-between">
                   <div class="flex flex-col space-y-2">
-                    <span class="text-gray-600">Diesel P</span>
-                    <span class="text-lg font-semibold">100,22</span>
+                    <span class="text-gray-600">Diesel Premium</span>
+                    <span class="text-lg font-semibold">1,3199</span>
                   </div>
-                  <div class="imagen"><img src="imagenes/logoMaps.png" alt="ubicacion" title="ubicación" width="60"></div>
+                  <div class="imagen"><img src="imagenes/tipoGasolinaIconos/B10.png" alt="ubicacion" title="ubicación" width="60"></div>
                 </div>
               </div>
           </div>
         </div>
-              <!-- Table see (https://tailwindui.com/components/application-ui/lists/tables) -->
-              <h3 class="mt-20 ml-16 text-2xl font-serif">Gasolineras</h3>
+              <h3 class="mt-20 text-2xl font-serif">Gasolineras Favoriotas</h3>
               <div class="flex flex-col">
                 <div class="-my-2 overflow-x-auto sm:-mx-6 lg:-mx-0 w-6/6">
                   <div class="inline-block min-w-full py-2 align-middle">
