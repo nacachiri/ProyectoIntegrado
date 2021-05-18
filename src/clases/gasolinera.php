@@ -145,7 +145,11 @@
                 $diesel = generica::numberFormatBD($gasolinera->{'Precio Gasoleo A'});
                 $dieselPremium = generica::numberFormatBD($gasolinera->{'Precio Gasoleo Premium'});
                 $horario = $gasolinera->Horario;
-                $stmt->execute();
+
+                if ($nombre != 'E.S.+AGRICOLA+S.C.J.+DE+ALBAL%2C+C.V.') {
+                    $stmt->execute();
+                }
+                
 
             }
 

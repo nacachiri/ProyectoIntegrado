@@ -133,16 +133,17 @@ document.addEventListener("DOMContentLoaded", () => {
             tdUbicaciondiv.className = 'px-3 py-2 text-lg font-serif text-gray-900 capitalize break-words cursor-pointer';
             let imgUbicacion = document.createElement('img');
             imgUbicacion.src = 'imagenes/logoMaps.png';
+            tdUbicaciondiv.setAttribute('ubicacion', arrDatos[gasolinera].latitud + ' ' + arrDatos[gasolinera].longitud);
 
             tdUbicaciondiv.appendChild(imgUbicacion);
+            tdUbicacion.appendChild(tdUbicaciondiv);
 
             tdUbicaciondiv.addEventListener('click', (e) => {
 
-                console.log('has clicado');
+                window.location.href = 'https://www.google.cl/maps/place/'+ e.currentTarget.getAttribute('ubicacion');
+                // console.log(e.currentTarget.getAttribute('ubicacion'));
 
             });
-
-            tdUbicacion.appendChild(tdUbicaciondiv);
 
             tr.appendChild(tdLogoNombre);
             tr.appendChild(tdDireccion);
@@ -155,6 +156,7 @@ document.addEventListener("DOMContentLoaded", () => {
             tr.appendChild(tdUbicacion);
             
             tabla.appendChild(tr);
+
 
         }
 
