@@ -171,6 +171,22 @@
 
         }
 
+        public function pintarGasolinerasFav(){
+
+
+            $conn = $this->getConn();
+            session_start();
+            $usuario = $_SESSION['usuario'];
+
+            $sql = "SELECT id,logo, nombre, direccion, (SELECT municipio FROM municipios where municipios.id_municipio = gasolineras.id_municipio) As 'municipio', latitud, longitud, gasolina95, gasolina98, diesel, diesel_premium, horario FROM gasolineras WHERE id IN (SELECT id_gasolinera FROM gasolinera_fav WHERE id_usuario = $usuario)";
+
+            $query = $conn->query($sql);
+            $arrGasolineras = $query->fetch_all(MYSQLI_ASSOC);
+
+            return $arrGasolineras;
+
+        }
+
     }
     
 

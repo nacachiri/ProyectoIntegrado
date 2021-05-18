@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
 
-    axios.get('../src/pintarJSONGasolineras.php').then((response) => {
+    axios.get('../src/pintarJSONGasolinerasFav.php').then((response) => {
         
         creacionTabla(response.data);
 
@@ -133,6 +133,7 @@ document.addEventListener("DOMContentLoaded", () => {
             tdUbicaciondiv.className = 'px-3 py-2 text-lg font-serif text-gray-900 capitalize break-words cursor-pointer';
             let imgUbicacion = document.createElement('img');
             imgUbicacion.src = 'imagenes/logoMaps.png';
+            imgUbicacion.className = 'w-10 h-10';
             tdUbicaciondiv.setAttribute('ubicacion', arrDatos[gasolinera].latitud + ' ' + arrDatos[gasolinera].longitud);
 
             tdUbicaciondiv.appendChild(imgUbicacion);
