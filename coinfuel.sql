@@ -44,7 +44,7 @@ CREATE TABLE `gasolineras` (
   `diesel` float NOT NULL,
   `diesel_premium` float NOT NULL,
   `horario` varchar(20) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Volcado de datos para la tabla `gasolineras`
@@ -571,7 +571,7 @@ CREATE TABLE `gasolinera_fav` (
   `id_usuario` int NOT NULL,
   `conf` tinyint(1) NOT NULL,
   `id_gasolinera_fav` int NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Volcado de datos para la tabla `gasolinera_fav`
@@ -591,7 +591,7 @@ CREATE TABLE `login` (
   `id` int NOT NULL,
   `id_user` int NOT NULL,
   `fechaHora` datetime NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Volcado de datos para la tabla `login`
@@ -612,7 +612,7 @@ DROP TABLE IF EXISTS `municipios`;
 CREATE TABLE `municipios` (
   `id_municipio` int NOT NULL,
   `municipio` varchar(30) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Volcado de datos para la tabla `municipios`
@@ -787,12 +787,12 @@ DROP TABLE IF EXISTS `register_user`;
 CREATE TABLE `register_user` (
   `id` int NOT NULL,
   `dni` varchar(9) NOT NULL,
-  `nombre` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
+  `nombre` varchar(20) CHARACTER SET utf8mb4 NOT NULL,
   `apellidos` varchar(40) NOT NULL,
   `email` varchar(50) NOT NULL,
   `password` varchar(100) NOT NULL,
   `cp` int NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Volcado de datos para la tabla `register_user`
