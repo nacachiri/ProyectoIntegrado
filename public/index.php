@@ -21,7 +21,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.1.2/tailwind.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"></script>
-    <script src="js/perfil.js"></script>
+    <script src="js/index.js"></script>
     <link rel="icon" type="image/png" href="Logo/logoFavicon.png">
     <title>CoinFuel | Perfil</title>
 </head>
@@ -59,6 +59,14 @@
                   <div class="flex flex-col p-4 space-y-1 font-medium border-b">
                     <span class="text-gray-800">Nacho Calomarde</span>
                     <span class="text-sm text-gray-400">nacho@proyectoalfa.es</span>
+                  </div>
+                  <ul class="flex flex-col p-2 my-2 space-y-1">
+                    <li>
+                      <a href="perfil.php" class="block px-2 py-1 transition rounded-md hover:bg-gray-100">Mi perfil</a>
+                    </li>
+                  </ul>
+                  <div class="flex items-center justify-center p-4 text-blue-700 underline border-t">
+                    <a href="#" id="cerrarSesion">Logout</a>
                   </div>
                 </div>
               </div>
