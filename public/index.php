@@ -6,9 +6,6 @@
         header('location:public/login.html');
 
     }
-    
-    echo 'Esta es la pagina de inicio';
-
 
 ?>
 

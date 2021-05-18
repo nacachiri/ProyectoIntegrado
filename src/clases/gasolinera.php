@@ -65,75 +65,75 @@
                 $nombre = $gasolinera->Rótulo;
 
                 if (strpos($nombre, 'REPSOL') !== false) {
-                    $logo = './public/logosGasolineras/logoRepsol.png';
+                    $logo = '../public/logosGasolineras/logoRepsol.png';
                 }elseif (strpos($nombre, 'ALCAMPO') !== false) {
-                    $logo = './public/logosGasolineras/logoAlcampo.png';
+                    $logo = '../public/logosGasolineras/logoAlcampo.png';
                 }elseif (strpos($nombre, 'CARREFOUR') !== false) {
-                    $logo = './public/logosGasolineras/logoCarrefour.png';
+                    $logo = '../public/logosGasolineras/logoCarrefour.png';
                 }elseif (strpos($nombre, 'BP') !== false) {
-                    $logo = './public/logosGasolineras/logoBp.png';
+                    $logo = '../public/logosGasolineras/logoBp.png';
                 }elseif (strpos($nombre, 'CESPSA') !== false) {
-                    $logo = './public/logosGasolineras/logoCepsa.png';
+                    $logo = '../public/logosGasolineras/logoCepsa.png';
                 }elseif (strpos($nombre, 'GALP') !== false) {
-                    $logo = './public/logosGasolineras/logoGalp.png';
+                    $logo = '../public/logosGasolineras/logoGalp.png';
                 }elseif (strpos($nombre, 'SHELL') !== false) {
-                    $logo = './public/logosGasolineras/logoShell.png';
+                    $logo = '../public/logosGasolineras/logoShell.png';
                 }elseif (strpos($nombre, 'AGRICAR') !== false) {
-                    $logo = './public/logosGasolineras/logoAgricar.png';
+                    $logo = '../public/logosGasolineras/logoAgricar.png';
                 }elseif (strpos($nombre, 'CAMPSA') !== false) {
-                    $logo = './public/logosGasolineras/logoCampsa.png';
+                    $logo = '../public/logosGasolineras/logoCampsa.png';
                 }elseif (strpos($nombre, 'EXOIL') !== false) {
-                    $logo = './public/logosGasolineras/logoExoil.png';
+                    $logo = '../public/logosGasolineras/logoExoil.png';
                 }elseif (strpos($nombre, 'BZ') !== false) {
-                    $logo = './public/logosGasolineras/logoBZ.png';
+                    $logo = '../public/logosGasolineras/logoBZ.png';
                 }elseif (strpos($nombre, 'BALLENOIL') !== false) {
-                    $logo = './public/logosGasolineras/logoBallenoil.png';
+                    $logo = '../public/logosGasolineras/logoBallenoil.png';
                 }elseif (strpos($nombre, 'AVIA') !== false) {
-                    $logo = './public/logosGasolineras/logoAvia.png';
+                    $logo = '../public/logosGasolineras/logoAvia.png';
                 }elseif (strpos($nombre, 'GASOLBEN') !== false) {
-                    $logo = './public/logosGasolineras/logoGasolben.png';
+                    $logo = '../public/logosGasolineras/logoGasolben.png';
                 }elseif (strpos($nombre, 'Q8') !== false) {
-                    $logo = './public/logosGasolineras/logoQ8.png';
+                    $logo = '../public/logosGasolineras/logoQ8.png';
                 }elseif (strpos($nombre, 'BENZINA') !== false) {
-                    $logo = './public/logosGasolineras/logoBenzina.png';
+                    $logo = '../public/logosGasolineras/logoBenzina.png';
                 }elseif (strpos($nombre, 'BIOMAR') !== false) {
-                    $logo = './public/logosGasolineras/logoBiomar.png';
+                    $logo = '../public/logosGasolineras/logoBiomar.png';
                 }elseif (strpos($nombre, 'Bioner') !== false) {
-                    $logo = './public/logosGasolineras/logoBioner.png';
+                    $logo = '../public/logosGasolineras/logoBioner.png';
                 }elseif (strpos($nombre, 'BURAN') !== false) {
-                    $logo = './public/logosGasolineras/logoBuranEnergy.png';
+                    $logo = '../public/logosGasolineras/logoBuranEnergy.png';
                 }elseif (strpos($nombre, 'ELDISSER') !== false) {
-                    $logo = './public/logosGasolineras/logoEldisser.png';
+                    $logo = '../public/logosGasolineras/logoEldisser.png';
                 }elseif (strpos($nombre, 'PETROLUEM') !== false) {
-                    $logo = './public/logosGasolineras/logoPetroleum.png';
+                    $logo = '../public/logosGasolineras/logoPetroleum.png';
                 }elseif (strpos($nombre, 'GASEXPRESS') !== false) {
-                    $logo = './public/logosGasolineras/logoGasexpress.png';
+                    $logo = '../public/logosGasolineras/logoGasexpress.png';
                 }elseif (strpos($nombre, 'AGULLENT') !== false) {
-                    $logo = './public/logosGasolineras/logoAgullent.png';
+                    $logo = '../public/logosGasolineras/logoAgullent.png';
                 }elseif (strpos($nombre, 'GEST') !== false) {
-                    $logo = './public/logosGasolineras/logoGest.png';
+                    $logo = '../public/logosGasolineras/logoGest.png';
                 }elseif (strpos($nombre, 'MOLGAS') !== false) {
-                    $logo = './public/logosGasolineras/logoMolgas.png';
+                    $logo = '../public/logosGasolineras/logoMolgas.png';
                 }elseif (strpos($nombre, 'NATURGY') !== false) {
-                    $logo = './public/logosGasolineras/logoNaturgy.png';
+                    $logo = '../public/logosGasolineras/logoNaturgy.png';
                 }elseif (strpos($nombre, 'OCTAPLUS') !== false) {
-                    $logo = './public/logosGasolineras/logoOctaplus.png';
+                    $logo = '../public/logosGasolineras/logoOctaplus.png';
                 }elseif (strpos($nombre, 'PETROENERGY') !== false) {
-                    $logo = './public/logosGasolineras/logoPetroenergy.png';
+                    $logo = '../public/logosGasolineras/logoPetroenergy.png';
                 }elseif (strpos($nombre, 'PETROMAX') !== false) {
-                    $logo = './public/logosGasolineras/logoPetromax.png';
+                    $logo = '../public/logosGasolineras/logoPetromax.png';
                 }elseif (strpos($nombre, 'PETRONOR') !== false) {
-                    $logo = './public/logosGasolineras/logoPetronor.png';
+                    $logo = '../public/logosGasolineras/logoPetronor.png';
                 }elseif (strpos($nombre, 'PETROPASS') !== false) {
-                    $logo = './public/logosGasolineras/logoPetropass.png';
+                    $logo = '../public/logosGasolineras/logoPetropass.png';
                 }elseif (strpos($nombre, 'PETROPRIX') !== false) {
-                    $logo = './public/logosGasolineras/logoPetroprix.png';
+                    $logo = '../public/logosGasolineras/logoPetroprix.png';
                 }elseif (strpos($nombre, 'PLENOIL') !== false) {
-                    $logo = './public/logosGasolineras/logoPlenoil.png';
+                    $logo = '../public/logosGasolineras/logoPlenoil.png';
                 }elseif (strpos($nombre, 'TAMOIL') !== false) {
-                    $logo = './public/logosGasolineras/logoTamoil.png';
+                    $logo = '../public/logosGasolineras/logoTamoil.png';
                 }else {
-                    $logo = './public/logosGasolineras/logoDefault.png';
+                    $logo = '../public/logosGasolineras/logoDefault.png';
                 }
 
                 $direccion = $gasolinera->Dirección;
@@ -145,7 +145,11 @@
                 $diesel = generica::numberFormatBD($gasolinera->{'Precio Gasoleo A'});
                 $dieselPremium = generica::numberFormatBD($gasolinera->{'Precio Gasoleo Premium'});
                 $horario = $gasolinera->Horario;
-                $stmt->execute();
+
+                if ($nombre != 'E.S.+AGRICOLA+S.C.J.+DE+ALBAL%2C+C.V.') {
+                    $stmt->execute();
+                }
+                
 
             }
 

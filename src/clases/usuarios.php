@@ -10,7 +10,7 @@
 
                 $emailPost = $arrDatos['email'];
 
-                $sql = "SELECT email, password FROM register_user WHERE email = '$emailPost'";
+                $sql = "SELECT id, email, password FROM register_user WHERE email = '$emailPost'";
                 $query = $conn->query($sql);
                 $user = $query->fetch_assoc();
 
@@ -20,6 +20,7 @@
 
                         session_start();
                         $_SESSION['logged'] = true;
+                        $_SESSION['usuario'] = $user['id'];
                         $this->logUser($arrDatos['email']);
                         return true;
     
