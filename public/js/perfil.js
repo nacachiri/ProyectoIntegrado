@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", () => {
     let botonVolver = document.getElementById('botonVolver');
     botonVolver.addEventListener("click", () => {
 
-        window.location.href = '/ProyectoIntegrado/public/';
+        window.location.href = '/';
 
     });
 
