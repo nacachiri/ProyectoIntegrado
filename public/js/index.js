@@ -101,11 +101,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
             let imgCorazon = document.createElement('img');
             imgCorazon.className = 'img-h-10 w-10 text-gray fill-current cursor-pointer';
-            imgCorazon.src = 'imagenes/corazon.jpg';
+            imgCorazon.src = 'public/imagenes/corazon.jpg';
 
             divCorazon.addEventListener('click', () => {
 
-                imgCorazon.src = 'imagenes/corazonPintado.png';
+                imgCorazon.src = 'public/imagenes/corazonPintado.png';
 
             });
 
@@ -174,7 +174,7 @@ document.addEventListener("DOMContentLoaded", () => {
             divImgTd1.className = 'bg-cover bg-center w-10 h-10 rounded-full mr-3';
 
             let imgTd1 = document.createElement('img');
-            imgTd1.src = 'imagenes/tipoGasolinaIconos/E5.png';
+            imgTd1.src = 'public/imagenes/tipoGasolinaIconos/E5.png';
 
             let divTextoTd1 = document.createElement('div');
 
@@ -200,7 +200,7 @@ document.addEventListener("DOMContentLoaded", () => {
             divImgTd2.className = 'bg-cover bg-center w-10 h-10 rounded-full mr-3';
 
             let imgTd2 = document.createElement('img');
-            imgTd2.src = 'imagenes/tipoGasolinaIconos/E10.png';
+            imgTd2.src = 'public/imagenes/tipoGasolinaIconos/E10.png';
 
             let divTextoTd2 = document.createElement('div');
 
@@ -230,7 +230,7 @@ document.addEventListener("DOMContentLoaded", () => {
             divImgFila2Td1.className = 'bg-cover bg-center w-10 h-10 rounded-full mr-3';
 
             let imgFila2Td1 = document.createElement('img');
-            imgFila2Td1.src = 'imagenes/tipoGasolinaIconos/B7.png';
+            imgFila2Td1.src = 'public/imagenes/tipoGasolinaIconos/B7.png';
 
             let divTextoFila2Td1 = document.createElement('div');
 
@@ -256,7 +256,7 @@ document.addEventListener("DOMContentLoaded", () => {
             divImgFila2Td2.className = 'bg-cover bg-center w-10 h-10 rounded-full mr-3';
 
             let imgFila2Td2 = document.createElement('img');
-            imgFila2Td2.src = 'imagenes/tipoGasolinaIconos/B10.png';
+            imgFila2Td2.src = 'public/imagenes/tipoGasolinaIconos/B10.png';
 
             let divTextoFila2Td2 = document.createElement('div');
 
