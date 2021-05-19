@@ -19,18 +19,23 @@
             
             $conn = $this->getConn();
 
-            $sql = "DELETE FROM $tabla";
-            $query = $conn->query($sql);
+            $sql1 = "SET FOREIGN_KEY_CHECKS=0;";
+            $query1 = $conn->query($sql1);
 
-            return $query;
+            $sql2 = "TRUNCATE TABLE $tabla;";
+            $query2 = $conn->query($sql2);
 
+            $sql3 = "SET FOREIGN_KEY_CHECKS=1;";
+            $query3 = $conn->query($sql3);
+
+            return $query3;
             
         }
 
         public function importarMunicipios($arrGasolineras) {
 
-            $this->truncarTablas('gasolineras');
-            $this->truncarTablas('municipios');
+            var_dump($this->truncarTablas('gasolineras'));
+            var_dump($this->truncarTablas('municipios'));
 
             $conn = $this->getConn();
 
@@ -168,6 +173,49 @@
             $arrGasolineras = $query->fetch_all(MYSQLI_ASSOC);
 
             return $arrGasolineras;
+
+        }
+
+        public function pintarMunicipios(){
+
+            $conn = $this->getConn();
+
+            $sql = "SELECT * FROM municipios";
+
+            $query = $conn->query($sql);
+            $arrMunicipios = $query->fetch_all(MYSQLI_ASSOC);
+
+            return $arrMunicipios;
+
+        }
+
+        public function pintarGasolinerasFav(){
+
+            $conn = $this->getConn();
+            session_start();
+            $usuario = $_SESSION['usuario'];
+
+            $sql = "SELECT id,logo, nombre, direccion, (SELECT municipio FROM municipios where municipios.id_municipio = gasolineras.id_municipio) As 'municipio', latitud, longitud, gasolina95, gasolina98, diesel, diesel_premium, horario FROM gasolineras WHERE id IN (SELECT id_gasolinera FROM gasolinera_fav WHERE id_usuario = $usuario)";
+
+            $query = $conn->query($sql);
+            $arrGasolineras = $query->fetch_all(MYSQLI_ASSOC);
+
+            return $arrGasolineras;
+
+        }
+
+        public function idGasolineraConf() {
+
+            $conn = $this->getConn();
+            session_start();
+            $usuario = $_SESSION['usuario'];
+
+            $sql = "SELECT id_gasolinera FROM gasolinera_fav WHERE id_usuario = $usuario AND conf = 1";
+
+            $query = $conn->query($sql);
+            $arrGasoFavConf = $query->fetch_all(MYSQLI_ASSOC);
+
+            return $arrGasoFavConf;
 
         }
 

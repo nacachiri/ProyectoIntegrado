@@ -12,7 +12,7 @@
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -57,6 +57,9 @@
                     <span class="text-gray-800">Nacho Calomarde</span>
                     <span class="text-sm text-gray-400">nacho@proyectoalfa.es</span>
                   </div>
+                  <div class="flex items-center justify-center p-4 text-blue-700 underline border-t">
+                    <a href="#" id="cerrarSesion">Logout</a>
+                  </div>
                 </div>
               </div>
             </div>
@@ -71,7 +74,7 @@
                 <div class="flex items-start justify-between">
                   <div class="flex flex-col space-y-2">
                     <span class="text-gray-600">Gasolina 95</span>
-                    <span class="text-lg font-semibold">1,3199 </span>
+                    <span class="text-lg font-semibold" id="precioG95">- -</span>
                   </div>
                   <div class="imagen"><img src="imagenes/tipoGasolinaIconos/E5.png" alt="ubicacion" title="ubicación" width="60"></div>
                 </div>
@@ -80,7 +83,7 @@
                 <div class="flex items-start justify-between">
                   <div class="flex flex-col space-y-2">
                     <span class="text-gray-600">Gasolina 98</span>
-                    <span class="text-lg font-semibold">1,3199</span>
+                    <span class="text-lg font-semibold" id="precioG98">- -</span>
                   </div>
                   <div class="imagen"><img src="imagenes/tipoGasolinaIconos/E10.png" alt="ubicacion" title="ubicación" width="60"></div>
                 </div>
@@ -89,7 +92,7 @@
                 <div class="flex items-start justify-between">
                   <div class="flex flex-col space-y-2">
                     <span class="text-gray-600">Diesel</span>
-                    <span class="text-lg font-semibold">1,3199</span>
+                    <span class="text-lg font-semibold" id="precioD">- -</span>
                   </div>
                   <div class="imagen"><img src="imagenes/tipoGasolinaIconos/B7.png" alt="ubicacion" title="ubicación" width="60"></div>
                 </div>
@@ -98,14 +101,19 @@
                 <div class="flex items-start justify-between">
                   <div class="flex flex-col space-y-2">
                     <span class="text-gray-600">Diesel Premium</span>
-                    <span class="text-lg font-semibold">1,3199</span>
+                    <span class="text-lg font-semibold" id="precioDP">- -</span>
                   </div>
                   <div class="imagen"><img src="imagenes/tipoGasolinaIconos/B10.png" alt="ubicacion" title="ubicación" width="60"></div>
                 </div>
               </div>
           </div>
+          <div>
+          <span class=" mt-10 pr-2 block font-bold">Seleciona tu gasolinera de confianza: </span>
+            <select class="mt-1 font-serif w-full pl-3 pr-10 py-2 text-black placeholder-gray-400 transition duration-100 ease-in-out bg-white border border-gray-300 rounded shadow-sm focus:border-blue-500 focus:ring-2 focus:ring-blue-500 focus:outline-none focus:ring-opacity-50 disabled:opacity-50 disabled:cursor-not-allowed " name="conf" id="selectConf"></select>
+          </div>
+          
         </div>
-              <h3 class="mt-20 text-2xl font-serif">Gasolineras Favoriotas</h3>
+              <h3 class="mt-10 text-2xl font-serif">Gasolineras Favoriotas</h3>
               <div class="flex flex-col">
                 <div class="-my-2 overflow-x-auto sm:-mx-6 lg:-mx-0 w-6/6">
                   <div class="inline-block min-w-full py-2 align-middle">
