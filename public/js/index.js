@@ -6,6 +6,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
     });
 
+    axios.get('../src/pintarMunicipiosJSON.php').then((response) => {
+        
+        console.log(response.data);
+        rellenarMunicipios(response.data);
+
+    });
+
     let botonCerrarSesion = document.getElementById("cerrarSesion");
     botonCerrarSesion.addEventListener("click", (e) => {
 
@@ -23,6 +30,22 @@ document.addEventListener("DOMContentLoaded", () => {
         })
 
     });
+    
+    function rellenarMunicipios(arrMunicipios) {
+
+        let selectMunicipio = document.getElementById('selectMunicipios');
+        
+        arrMunicipios.forEach(municipio => {
+
+            let option = document.createElement('option');
+            option.value = municipio.id;
+            option.text = municipio.municipio;
+    
+            selectMunicipio.appendChild(option);
+
+        })
+
+    }
 
     function crearCartasGasolineras(arrDatosGasolineras) {
 

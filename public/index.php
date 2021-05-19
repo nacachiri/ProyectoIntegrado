@@ -27,7 +27,7 @@
 </head>
 <body>
   <div>
-    <div class="flex h-screen bg-white" x-data="setup()" x-init="$refs.loading.classList.add('hidden')">
+    <div class="flex h-screen bg-white overflow-x-hidden" x-data="setup()" x-init="$refs.loading.classList.add('hidden')">
         <div class="flex flex-col flex-1 h-full">
         <!-- Navbar -->
         <header class="flex-shrink-0 border-b bg-gray-700">
@@ -73,104 +73,43 @@
             </div>
           </div>
         </header>
-        <div class="mx-auto">
-          <div class="flex">
-            <select class="mt-1 mr-2 font-serif w-full pl-3 pr-10 py-2 text-black placeholder-gray-400 transition duration-100 ease-in-out bg-white border border-gray-300 rounded shadow-sm focus:border-blue-500 focus:ring-2 focus:ring-blue-500 focus:outline-none focus:ring-opacity-50 disabled:opacity-50 disabled:cursor-not-allowed " name="conf" id="selectConbustible">
-              <option value="gasolina95">Gasolina 95</option>
-              <option value="gasolina95">Gasolina 95</option>
-              <option value="diesel">Diesel 95</option>
-              <option value="diesel_plus">Diesel Premium</option>
-            </select>
-            <select class="mt-1 mr-2 font-serif w-full pl-3 pr-10 py-2 text-black placeholder-gray-400 transition duration-100 ease-in-out bg-white border border-gray-300 rounded shadow-sm focus:border-blue-500 focus:ring-2 focus:ring-blue-500 focus:outline-none focus:ring-opacity-50 disabled:opacity-50 disabled:cursor-not-allowed " name="conf" id="selectMunicipios"></select>
-          </div>
-            
-        </div>
-        <div class=" flex flex-wrap content-start md:container md:mx-auto " id="targetasContenedor">
-          <!-- <div class="max-w-sm py-4 px-3 ">
-            <div class="bg-gray-100 shadow-xl rounded-lg overflow-hidden h-auto">
-              <div class="float-right py-2 pr-2">
-                  <img class="img-h-10 w-10 text-gray fill-current" src="imagenes/corazon.jpg">
-              </div>
-                <div class="flex items-center pt-2 pl-2">
-                    <div class="bg-cover bg-center w-14 h-14 rounded-full mr-3" >
-                        <img src="logosGasolineras/logoRepsol.png">
-                    </div>
-                    <div>
-                        <p class="font-bold text-gray-900 font-serif text-2xl">Repsol</p>
-                        <p class="text-sm text-gray-700 font-serif">C/Almirante Cervera</p>
-                        <p class="text-sm text-gray-700 font-serif">Valencia</p>
-                    </div>
+        <div class="flex w-full m-3">
+          <div class="bg-gray-100 shadow rounded-lg p-6 mx-auto w-full  mr-6">
+            <div class="grid lg:grid-cols-2 gap-6">
+              <div class="border focus-within:border-gray-500 focus-within:text-gray-500 transition-all duration-500 relative rounded p-1">
+                <div class="-mt-4 absolute tracking-wider px-1 uppercase text-xs">
+                  <p>
+                    <label for="name" class="bg-gray-100 text-gray-600 px-1">Combustible</label>
+                  </p>
                 </div>
-              <div class="p-4">
-                  <p class="uppercase tracking-wide text-sm font-bold text-gray-700 font-serif">HORARIO</p>
-                  <p class="text-3xl text-gray-900 font-serif ">10:00 - 20:00</p>
-                  <div class="pt-4 flex justify-start">
-                  <a href class="border-2 border-blue-500 rounded-full font-bold text-blue-500 px-4 py-1 transition duration-300 ease-in-out hover:bg-blue-500 hover:text-white mr-6"> Ir</a>
-                  </div>
+                <p>
+                  <select class="py-1 px-1 text-gray-900 bg-gray-100 outline-none block h-full w-full" id="selectConbustible">
+                    <option value="gasolina95">Gasolina 95</option>
+                    <option value="gasolina95">Gasolina 95</option>
+                    <option value="diesel">Diesel 95</option>
+                    <option value="diesel_plus">Diesel Premium</option>
+                  </select>
+                </p>
               </div>
-              <div class="flex p-6 border-t border-gray-300 text-gray-800">
-                  <table class="default">
-                    <tr>
-                      <td>
-                        <div class="flex items-start mr-8">
-                            <div class="flex items-center">
-                                <div class="bg-cover bg-center w-full h-full rounded-full mr-3" >
-                                    <img src="imagenes/tipoGasolinaIconos/E5.png">
-                                </div>
-                                <div>
-                                    <p class="font-bold text-gray-900 font-serif">Gasolina 95</p>
-                                    <p class="text-sm text-gray-700 font-mono">1,0235</p>
-                                </div>
-                            </div>
-                        </div>
-                      </td>
-                      <td>
-                        <div class="flex items-start mr-8">
-                            <div class="flex items-center">
-                                <div class="bg-cover bg-center w-full h-full rounded-full mr-3" >
-                                    <img src="imagenes/tipoGasolinaIconos/E10.png">
-                                </div>
-                                <div>
-                                    <p class="font-bold text-gray-900 font-serif">Gasolina 98</p>
-                                    <p class="text-sm text-gray-700 font-mono">1,0235</p>
-                                </div>
-                            </div>
-                        </div>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>
-                        <div class="flex items-start mr-8">
-                            <div class="flex items-center">
-                                <div class="bg-cover bg-center w-10 h-10 rounded-full mr-3" >
-                                    <img src="imagenes/tipoGasolinaIconos/B7.png">
-                                </div>
-                                <div>
-                                    <p class="font-bold text-gray-900 font-serif">Diesel</p>
-                                    <p class="text-sm text-gray-700 font-mono">1,0235</p>
-                                </div>
-                            </div>
-                        </div>
-                      </td>
-                      <td>
-                        <div class="flex items-start mr-8">
-                            <div class="flex items-center">
-                                <div class="bg-cover bg-center w-full h-full rounded-full mr-3" >
-                                    <img src="imagenes/tipoGasolinaIconos/B10.png">
-                                </div>
-                                <div>
-                                    <p class="font-bold text-gray-900 font-serif">Diesel Premium</p>
-                                    <p class="text-sm text-gray-700 font-mono">1,0235</p>
-                                </div>
-                            </div>
-                        </div>
-                      </td>
-                    </tr>
-                  </table>                  
+              <div class="border focus-within:border-gray-500 focus-within:text-gray-500 transition-all duration-500 relative rounded p-1">
+                <div class="-mt-4 absolute tracking-wider px-1 uppercase text-xs">
+                  <p>
+                    <label for="name" class="bg-gray-100 text-gray-600 px-1">Municipios</label>
+                  </p>
                 </div>
+                <p>
+                  <select class="py-1 px-1 text-gray-900 bg-gray-100 outline-none block h-full w-full" id="selectMunicipios">
+                    
+                  </select>
+                </p>
               </div>
             </div>
-          </div> -->
+          </div>
+        </div>
+        <div class="mx-auto">
+          <div class="flex flex-wrap container mx-auto " id="targetasContenedor">
+          
+          </div>
         </div>
         </div>
     </div>

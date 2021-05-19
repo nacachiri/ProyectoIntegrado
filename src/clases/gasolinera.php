@@ -171,6 +171,19 @@
 
         }
 
+        public function pintarMunicipios(){
+
+            $conn = $this->getConn();
+
+            $sql = "SELECT * FROM municipios";
+
+            $query = $conn->query($sql);
+            $arrMunicipios = $query->fetch_all(MYSQLI_ASSOC);
+
+            return $arrMunicipios;
+
+        }
+
         public function pintarGasolinerasFav(){
 
             $conn = $this->getConn();
