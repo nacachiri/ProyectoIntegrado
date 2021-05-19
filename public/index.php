@@ -54,7 +54,7 @@
                 <div
                   @click.away="isOpen = false"
                   x-show.transition.opacity="isOpen"
-                  class="absolute mt-1 transform -translate-x-40 bg-white rounded-md shadow-lg min-w-max"
+                  class="z-50 absolute mt-1 transform -translate-x-40 bg-white rounded-md shadow-lg min-w-max"
                 >
                   <div class="flex flex-col p-4 space-y-1 font-medium border-b">
                     <span class="text-gray-800">Nacho Calomarde</span>
@@ -83,7 +83,7 @@
                   </p>
                 </div>
                 <p>
-                  <select class="py-1 px-1 text-gray-900 bg-gray-100 outline-none block h-full w-full" id="selectConbustible">
+                  <select class="z-1 py-1 px-1 text-gray-900 bg-gray-100 outline-none block h-full w-full" id="selectConbustible">
                     <option value="gasolina95">Gasolina 95</option>
                     <option value="gasolina95">Gasolina 95</option>
                     <option value="diesel">Diesel 95</option>

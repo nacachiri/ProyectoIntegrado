@@ -225,7 +225,7 @@ document.addEventListener("DOMContentLoaded", () => {
             // Esto es el td del Ubicacion
 
             let tdUbicacion = document.createElement('td');
-            tdUbicacion.className = 'px-6 py-4 text-center';
+            tdUbicacion.className = 'px-6 py-4 text-center w-10';
             let tdUbicaciondiv = document.createElement('div');
             tdUbicaciondiv.className = 'px-3 py-2 text-lg font-serif text-gray-900 capitalize break-words cursor-pointer';
             let imgUbicacion = document.createElement('img');
