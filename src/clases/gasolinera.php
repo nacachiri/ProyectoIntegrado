@@ -19,18 +19,23 @@
             
             $conn = $this->getConn();
 
-            $sql = "DELETE FROM $tabla";
-            $query = $conn->query($sql);
+            $sql1 = "SET FOREIGN_KEY_CHECKS=0;";
+            $query1 = $conn->query($sql1);
 
-            return $query;
+            $sql2 = "TRUNCATE TABLE $tabla;";
+            $query2 = $conn->query($sql2);
 
+            $sql3 = "SET FOREIGN_KEY_CHECKS=1;";
+            $query3 = $conn->query($sql3);
+
+            return $query3;
             
         }
 
         public function importarMunicipios($arrGasolineras) {
 
-            $this->truncarTablas('gasolineras');
-            $this->truncarTablas('municipios');
+            var_dump($this->truncarTablas('gasolineras'));
+            var_dump($this->truncarTablas('municipios'));
 
             $conn = $this->getConn();
 
