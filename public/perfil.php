@@ -7,8 +7,6 @@
 
     }
 
-    $_SESSION['usuario'];
-
 ?>
 
 <!DOCTYPE html>
@@ -54,8 +52,8 @@
                   class="absolute mt-1 transform -translate-x-40 bg-white rounded-md shadow-lg min-w-max"
                 >
                   <div class="flex flex-col p-4 space-y-1 font-medium border-b">
-                    <span class="text-gray-800">Nacho Calomarde</span>
-                    <span class="text-sm text-gray-400">nacho@proyectoalfa.es</span>
+                    <span class="text-gray-800" id="nameUser"></span>
+                    <span class="text-sm text-gray-400" id="emailUser"></span>
                   </div>
                   <div class="flex items-center justify-center p-4 text-blue-700 underline border-t">
                     <a href="#" id="cerrarSesion">Logout</a>

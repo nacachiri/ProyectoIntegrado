@@ -179,6 +179,21 @@
 
         }
 
+        public function selectUsuario() {
+            
+            $conn = $this->getConn();
+
+            $usuario = $_SESSION['usuario'];
+            
+            $sql =  "SELECT nombre,email FROM register_user WHERE id = $usuario";
+            $query = $conn->query($sql);
+
+            $arrUsuario = $query->fetch_all(MYSQLI_ASSOC);
+
+            return $arrUsuario;
+
+        }
+
     }
     
 
