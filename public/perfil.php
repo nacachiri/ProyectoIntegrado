@@ -58,7 +58,7 @@
                     <span class="text-sm text-gray-400">nacho@proyectoalfa.es</span>
                   </div>
                   <div class="flex items-center justify-center p-4 text-blue-700 underline border-t">
-                    <a href="#">Logout</a>
+                    <a href="#" id="cerrarSesion">Logout</a>
                   </div>
                 </div>
               </div>
