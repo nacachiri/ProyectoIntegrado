@@ -27,8 +27,8 @@
 </head>
 <body>
   <div>
-    <div class="flex h-screen overflow-y-hidden bg-white" x-data="setup()" x-init="$refs.loading.classList.add('hidden')">
-        <div class="flex flex-col flex-1 h-full overflow-hidden">
+    <div class="flex h-screen bg-white" x-data="setup()" x-init="$refs.loading.classList.add('hidden')">
+        <div class="flex flex-col flex-1 h-full">
         <!-- Navbar -->
         <header class="flex-shrink-0 border-b bg-gray-700">
           <div class="flex items-center justify-between p-2">
@@ -73,8 +73,93 @@
             </div>
           </div>
         </header>
-        
-        
+        <div class="mx-auto">
+        <div class=" flex flex-wrap content-start md:container md:mx-auto " id="targetasContenedor">
+          <!-- <div class="max-w-sm py-4 px-3 ">
+            <div class="bg-gray-100 shadow-xl rounded-lg overflow-hidden h-auto">
+              <div class="float-right py-2 pr-2">
+                  <img class="img-h-10 w-10 text-gray fill-current" src="imagenes/corazon.jpg">
+              </div>
+                <div class="flex items-center pt-2 pl-2">
+                    <div class="bg-cover bg-center w-14 h-14 rounded-full mr-3" >
+                        <img src="logosGasolineras/logoRepsol.png">
+                    </div>
+                    <div>
+                        <p class="font-bold text-gray-900 font-serif text-2xl">Repsol</p>
+                        <p class="text-sm text-gray-700 font-serif">C/Almirante Cervera</p>
+                        <p class="text-sm text-gray-700 font-serif">Valencia</p>
+                    </div>
+                </div>
+              <div class="p-4">
+                  <p class="uppercase tracking-wide text-sm font-bold text-gray-700 font-serif">HORARIO</p>
+                  <p class="text-3xl text-gray-900 font-serif ">10:00 - 20:00</p>
+                  <div class="pt-4 flex justify-start">
+                  <a href class="border-2 border-blue-500 rounded-full font-bold text-blue-500 px-4 py-1 transition duration-300 ease-in-out hover:bg-blue-500 hover:text-white mr-6"> Ir</a>
+                  </div>
+              </div>
+              <div class="flex p-6 border-t border-gray-300 text-gray-800">
+                  <table class="default">
+                    <tr>
+                      <td>
+                        <div class="flex items-start mr-8">
+                            <div class="flex items-center">
+                                <div class="bg-cover bg-center w-full h-full rounded-full mr-3" >
+                                    <img src="imagenes/tipoGasolinaIconos/E5.png">
+                                </div>
+                                <div>
+                                    <p class="font-bold text-gray-900 font-serif">Gasolina 95</p>
+                                    <p class="text-sm text-gray-700 font-mono">1,0235</p>
+                                </div>
+                            </div>
+                        </div>
+                      </td>
+                      <td>
+                        <div class="flex items-start mr-8">
+                            <div class="flex items-center">
+                                <div class="bg-cover bg-center w-full h-full rounded-full mr-3" >
+                                    <img src="imagenes/tipoGasolinaIconos/E10.png">
+                                </div>
+                                <div>
+                                    <p class="font-bold text-gray-900 font-serif">Gasolina 98</p>
+                                    <p class="text-sm text-gray-700 font-mono">1,0235</p>
+                                </div>
+                            </div>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <div class="flex items-start mr-8">
+                            <div class="flex items-center">
+                                <div class="bg-cover bg-center w-10 h-10 rounded-full mr-3" >
+                                    <img src="imagenes/tipoGasolinaIconos/B7.png">
+                                </div>
+                                <div>
+                                    <p class="font-bold text-gray-900 font-serif">Diesel</p>
+                                    <p class="text-sm text-gray-700 font-mono">1,0235</p>
+                                </div>
+                            </div>
+                        </div>
+                      </td>
+                      <td>
+                        <div class="flex items-start mr-8">
+                            <div class="flex items-center">
+                                <div class="bg-cover bg-center w-full h-full rounded-full mr-3" >
+                                    <img src="imagenes/tipoGasolinaIconos/B10.png">
+                                </div>
+                                <div>
+                                    <p class="font-bold text-gray-900 font-serif">Diesel Premium</p>
+                                    <p class="text-sm text-gray-700 font-mono">1,0235</p>
+                                </div>
+                            </div>
+                        </div>
+                      </td>
+                    </tr>
+                  </table>                  
+                </div>
+              </div>
+            </div>
+          </div> -->
         </div>
         </div>
     </div>
