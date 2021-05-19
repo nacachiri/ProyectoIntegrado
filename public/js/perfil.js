@@ -91,8 +91,12 @@ document.addEventListener("DOMContentLoaded", () => {
             tdGasolina.className = 'px-6 py-4 text-center';
             let tdGasolinadiv = document.createElement('div');
             tdGasolinadiv.className = 'px-6 py-4 text-lg font-serif text-gray-900 capitalize break-words';
-            tdGasolinadiv.innerHTML = arrDatos[gasolinera].gasolina95;
-
+            if (arrDatos[gasolinera].gasolina95 <= 0) {
+                tdGasolinadiv.innerHTML = '- -';
+            }else{
+                tdGasolinadiv.innerHTML = arrDatos[gasolinera].gasolina95;
+            }
+        
             tdGasolina.appendChild(tdGasolinadiv);
 
             // Esto es el td del Gasolina98
@@ -101,7 +105,11 @@ document.addEventListener("DOMContentLoaded", () => {
             tdGasolina98.className = 'px-6 py-4 text-center';
             let tdGasolina98div = document.createElement('div');
             tdGasolina98div.className = 'px-6 py-4 text-lg font-serif text-gray-900 capitalize break-words';
-            tdGasolina98div.innerHTML = arrDatos[gasolinera].gasolina98;
+            if (arrDatos[gasolinera].gasolina98 <= 0) {
+                tdGasolina98div.innerHTML = '- -';
+            }else{
+                tdGasolina98div.innerHTML = arrDatos[gasolinera].gasolina98;
+            }
 
             tdGasolina98.appendChild(tdGasolina98div);
 
@@ -111,6 +119,11 @@ document.addEventListener("DOMContentLoaded", () => {
             tdDiesel.className = 'px-6 py-4 text-center';
             let tdDieseldiv = document.createElement('div');
             tdDieseldiv.className = 'px-6 py-4 text-lg font-serif text-gray-900 capitalize break-words';
+            if (arrDatos[gasolinera].diesel <= 0) {
+                tdDieseldiv.innerHTML = '- -';
+            }else{
+                tdDieseldiv.innerHTML = arrDatos[gasolinera].diesel;
+            }
             tdDieseldiv.innerHTML = arrDatos[gasolinera].diesel;
 
             tdDiesel.appendChild(tdDieseldiv);
@@ -121,7 +134,11 @@ document.addEventListener("DOMContentLoaded", () => {
             tdDieselPlus.className = 'px-6 py-4 text-center';
             let tdDieselPlusdiv = document.createElement('div');
             tdDieselPlusdiv.className = 'px-6 py-4 text-lg font-serif text-gray-900 capitalize break-words';
-            tdDieselPlusdiv.innerHTML = arrDatos[gasolinera].diesel_premium;
+            if (arrDatos[gasolinera].diesel_premium <= 0) {
+                tdDieselPlusdiv.innerHTML = '- -';
+            }else{
+                tdDieselPlusdiv.innerHTML = arrDatos[gasolinera].diesel_premium;
+            }
 
             tdDieselPlus.appendChild(tdDieselPlusdiv);
 
