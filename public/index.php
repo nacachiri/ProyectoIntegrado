@@ -74,6 +74,17 @@
           </div>
         </header>
         <div class="mx-auto">
+          <div class="flex">
+            <select class="mt-1 mr-2 font-serif w-full pl-3 pr-10 py-2 text-black placeholder-gray-400 transition duration-100 ease-in-out bg-white border border-gray-300 rounded shadow-sm focus:border-blue-500 focus:ring-2 focus:ring-blue-500 focus:outline-none focus:ring-opacity-50 disabled:opacity-50 disabled:cursor-not-allowed " name="conf" id="selectConbustible">
+              <option value="gasolina95">Gasolina 95</option>
+              <option value="gasolina95">Gasolina 95</option>
+              <option value="diesel">Diesel 95</option>
+              <option value="diesel_plus">Diesel Premium</option>
+            </select>
+            <select class="mt-1 mr-2 font-serif w-full pl-3 pr-10 py-2 text-black placeholder-gray-400 transition duration-100 ease-in-out bg-white border border-gray-300 rounded shadow-sm focus:border-blue-500 focus:ring-2 focus:ring-blue-500 focus:outline-none focus:ring-opacity-50 disabled:opacity-50 disabled:cursor-not-allowed " name="conf" id="selectMunicipios"></select>
+          </div>
+            
+        </div>
         <div class=" flex flex-wrap content-start md:container md:mx-auto " id="targetasContenedor">
           <!-- <div class="max-w-sm py-4 px-3 ">
             <div class="bg-gray-100 shadow-xl rounded-lg overflow-hidden h-auto">
