@@ -22,6 +22,8 @@ function main() {
             // div corazon
         let divCorazon=document.createElement('div')
         divCorazon.className='float-right py-2 pr-2'
+        divCorazon.style='background-image: url(../Logo/logoSolo.png)'
+        
 
         
 
@@ -99,8 +101,6 @@ function main() {
         // creacion de la tabla
         let tabla= document.createElement('table')
 
-        
-
         let tr= document.createElement('tr')
         
         // aqui empieza los td con logo,precio,nombre gasolina 95
@@ -125,11 +125,8 @@ function main() {
         
 
         
-        
-        
-        
-        
-        
+        divHeader.appendChild(imgGasolinera)
+        divCentrado.appendChild(divHeader)
         
         divgasolinaPrecio.appendChild(pPrecio)
         divgasolinaPrecio.appendChild(pgasolina95)
@@ -140,7 +137,7 @@ function main() {
         tr.appendChild(td)
         tabla.appendChild(tr)
         rayaSeparada.appendChild(tabla)
-        divCentrado.appendChild(rayaSeparada)
+        
         
         divBoton.appendChild(botonHref)
         divHorario.appendChild(divBoton)
@@ -156,8 +153,7 @@ function main() {
         divHeader.appendChild(pNombreGasolinera)
         divHeader.appendChild(imgGasolineraTexto)
 
-        divHeader.appendChild(imgGasolinera)
-        divCentrado.appendChild(divHeader)
+        
 
         divCentrado.appendChild(imagenCorazon)
         divCentrado.appendChild(divCorazon)
@@ -166,7 +162,7 @@ function main() {
 
         document.body.appendChild(divCentrado)
 
-
+        divCentrado.appendChild(rayaSeparada)
 
 
         // // aqui empieza los td con logo,precio,nombre gasolina 98 
