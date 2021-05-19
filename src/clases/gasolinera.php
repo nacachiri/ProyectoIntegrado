@@ -173,7 +173,6 @@
 
         public function pintarGasolinerasFav(){
 
-
             $conn = $this->getConn();
             session_start();
             $usuario = $_SESSION['usuario'];
@@ -184,6 +183,21 @@
             $arrGasolineras = $query->fetch_all(MYSQLI_ASSOC);
 
             return $arrGasolineras;
+
+        }
+
+        public function idGasolineraConf() {
+
+            $conn = $this->getConn();
+            session_start();
+            $usuario = $_SESSION['usuario'];
+
+            $sql = "SELECT id_gasolinera FROM gasolinera_fav WHERE id_usuario = $usuario AND conf = 1";
+
+            $query = $conn->query($sql);
+            $arrGasoFavConf = $query->fetch_all(MYSQLI_ASSOC);
+
+            return $arrGasoFavConf;
 
         }
 

@@ -3,6 +3,7 @@ document.addEventListener("DOMContentLoaded", () => {
     axios.get('../src/pintarJSONGasolinerasFav.php').then((response) => {
         
         creacionTabla(response.data);
+        rellenarSelectConf(response.data);  
 
     });
 
@@ -12,6 +13,67 @@ document.addEventListener("DOMContentLoaded", () => {
         window.location.href = '/';
 
     });
+
+    function rellenarDatosConf(arrDatosGaso, id) {
+        
+        let precioG95 = document.getElementById('precioG95');
+        let precioG98 = document.getElementById('precioG98');
+        let precioD = document.getElementById('precioD');
+        let precioDP = document.getElementById('precioDP');
+
+        arrDatosGaso.forEach(gasolinera => {
+
+            if (gasolinera.id == id) {
+                precioG95.innerHTML = gasolinera.gasolina95;
+                precioG98.innerHTML = gasolinera.gasolina98;
+                precioD.innerHTML = gasolinera.diesel;
+                precioDP.innerHTML = gasolinera.diesel_premium;
+            }
+
+            if (gasolinera.diesel == 0) {
+                precioD.innerHTML = '- -';
+            }
+
+            if (gasolinera.diesel_premium == 0) {
+                precioDP.innerHTML = '- -';
+            }
+
+            if (gasolinera.gasolina95 == 0) {
+                precioG95.innerHTML = '- -';
+            }
+
+            if (gasolinera.gasolina98 == 0) {
+                precioG98.innerHTML = '- -';
+            }
+
+        }); 
+
+    }
+
+    function rellenarSelectConf(arrDatosGaso) {
+        
+        let select = document.getElementById('selectConf');
+
+        arrDatosGaso.forEach(gasolinera => {
+
+            let option = document.createElement('option');
+            option.value = gasolinera.id;
+            option.text = gasolinera.nombre + ' ' + gasolinera.direccion + ' ' + gasolinera.municipio;
+    
+            select.appendChild(option);
+
+        });
+        
+        select.addEventListener('change', (e) => {
+
+            rellenarDatosConf(arrDatosGaso, e.currentTarget.value)
+
+        });
+
+    }
+
+    let selectConf = document.getElementById('selectConf');
+    
 
     let botonCerrarSesion = document.getElementById("cerrarSesion");
     botonCerrarSesion.addEventListener("click", (e) => {
