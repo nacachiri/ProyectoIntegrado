@@ -27,8 +27,8 @@
 </head>
 <body>
   <div>
-    <div class="flex h-screen bg-white overflow-x-hidden" x-data="setup()" x-init="$refs.loading.classList.add('hidden')">
-        <div class="flex flex-col flex-1 h-full">
+    <div class="flex h-screen bg-white overflow-auto" x-data="setup()" x-init="$refs.loading.classList.add('hidden')">
+        <div class="flex flex-col flex-1 h-full overflow-auto">
         <!-- Navbar -->
         <header class="flex-shrink-0 border-b bg-gray-700">
           <div class="flex items-center justify-between p-2">
