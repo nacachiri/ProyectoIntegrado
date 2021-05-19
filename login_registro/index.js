@@ -56,12 +56,14 @@ function main() {
         // nombre de la calle
         let pNombreCalle = document.createElement('p')
         pNombreCalle.className='text-sm text-gray-700 font-serif'
+        pNombreCalle.innerHTML='C/Almirante Cervera'
 
         
 
         // nombre de la municipio
         let pNombreMunicipio = document.createElement('p')
         pNombreMunicipio.className='text-sm text-gray-700 font-serif'
+        pNombreMunicipio.innerHTML='Valencia'
         
         
 
@@ -124,6 +126,7 @@ function main() {
         pPrecio.className='text-sm text-gray-700 font-mono'
         
 
+
         
         divHeader.appendChild(imgGasolinera)
         divCentrado.appendChild(divHeader)
@@ -138,11 +141,15 @@ function main() {
         tabla.appendChild(tr)
         rayaSeparada.appendChild(tabla)
         
-        
+        divHorario.appendChild(pHorario)
+        divHorario.appendChild(pFechaHorario)
         divBoton.appendChild(botonHref)
         divHorario.appendChild(divBoton)
-        divHorario.appendChild(pFechaHorario)
-        divHorario.appendChild(pHorario)
+        
+        pHorario.innerHTML='hola'
+        pFechaHorario.innerHTML='10:00'
+        
+        
         divCentrado.appendChild(divHorario)
 
 
@@ -151,6 +158,8 @@ function main() {
         divHeader.appendChild(pNombreMunicipio)
         divHeader.appendChild(pNombreCalle)
         divHeader.appendChild(pNombreGasolinera)
+        pNombreGasolinera.innerHTML='Repsol'
+        
         divHeader.appendChild(imgGasolineraTexto)
 
         
