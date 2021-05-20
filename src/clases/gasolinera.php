@@ -189,6 +189,28 @@
 
         }
 
+        public function añadirGasolineraFav($arrFavGaso){
+
+            $conn = $this->getConn();
+
+            session_start();
+            $usuario = $_SESSION['usuario'];
+            $id_gasolinera = $arrFavGaso['idGasolinera'];
+
+            $sql = "SELECT * FROM gasolinera_fav WHERE id_gasolinera = '$id_gasolinera' AND id_usuario = '$usuario'";
+            $query = $conn->query($sql);
+
+            if($query->num_rows > 0) {
+                return 'yaFavorita';
+            }else {
+                $sql = "INSERT INTO gasolinera_fav(id_gasolinera,id_usuario,conf) VALUES ($id_gasolinera, $usuario, 0)";
+                $query = $conn->query($sql);
+
+                return $query;
+            }
+
+        }
+
         public function pintarGasolinerasFav(){
 
             $conn = $this->getConn();

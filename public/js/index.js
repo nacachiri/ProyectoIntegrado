@@ -8,7 +8,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
     axios.get('../src/pintarMunicipiosJSON.php').then((response) => {
         
-        console.log(response.data);
         rellenarMunicipios(response.data);
 
     });
@@ -77,14 +76,32 @@ document.addEventListener("DOMContentLoaded", () => {
 
             let divCorazon = document.createElement('div');
             divCorazon.className = 'float-right py-2 pr-2';
+            divCorazon.id = gasolinera.id
 
             let imgCorazon = document.createElement('img');
             imgCorazon.className = 'img-h-10 w-10 text-gray fill-current cursor-pointer';
             imgCorazon.src = 'imagenes/corazon.jpg';
 
-            divCorazon.addEventListener('click', () => {
+            divCorazon.addEventListener('click', (e) => {
 
-                imgCorazon.src = 'imagenes/corazonPintado.png';
+                axios.post('../src/añadirGasolineraFav.php', {
+
+                    idGasolinera : e.currentTarget.id,
+        
+                }).then((response) => {
+                    
+                    if (response.data == 'yaFavorita') {
+
+                        imgCorazon.src = 'imagenes/corazon.jpg';
+
+                    }else{
+
+                        imgCorazon.src = 'imagenes/corazonPintado.png';
+
+                    }
+                
+                })
+
 
             });
 
