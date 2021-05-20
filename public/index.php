@@ -22,8 +22,8 @@
 </head>
 <body>
   <div>
-    <div class="flex h-screen bg-white overflow-auto" x-data="setup()" x-init="$refs.loading.classList.add('hidden')">
-        <div class="flex flex-col flex-1 h-full overflow-auto">
+    <div class="flex h-screen bg-white" x-data="setup()" x-init="$refs.loading.classList.add('hidden')">
+        <div class="flex flex-col flex-1 h-full">
         <!-- Navbar -->
         <header class="flex-shrink-0 border-b bg-gray-700">
           <div class="flex items-center justify-between p-2">
@@ -68,8 +68,8 @@
             </div>
           </div>
         </header>
-        <div class="flex w-full m-3">
-          <div class="bg-gray-100 shadow rounded-lg p-6 mx-auto w-full  mr-6">
+        <div class="flex w-full">
+          <div class="bg-gray-100 shadow rounded-lg p-6 mx-auto w-full mr-4 ml-4 m-6">
             <div class="grid lg:grid-cols-2 gap-6">
               <div class="border focus-within:border-gray-500 focus-within:text-gray-500 transition-all duration-500 relative rounded p-1">
                 <div class="-mt-4 absolute tracking-wider px-1 uppercase text-xs">

@@ -91,7 +91,7 @@ document.addEventListener("DOMContentLoaded", () => {
             }
 
             let divCarta = document.createElement('div');
-            divCarta.className = 'max-w-sm py-4 px-3';
+            divCarta.className = 'mx-auto max-w-sm py-4 px-3';
 
             let divCartaCentrado = document.createElement('div');
             divCartaCentrado.className = 'bg-gray-100 shadow-xl rounded-lg overflow-hidden h-auto';
