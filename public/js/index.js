@@ -73,7 +73,7 @@ document.addEventListener("DOMContentLoaded", () => {
             divCarta.className = 'mx-auto max-w-sm py-4 px-3';
 
             let divCartaCentrado = document.createElement('div');
-            divCartaCentrado.className = 'bg-gray-100 shadow-xl rounded-lg overflow-hidden h-auto';
+            divCartaCentrado.className = 'bg-gray-100 shadow-xl rounded-lg overflow-hidden h-full';
 
             let divCorazon = document.createElement('div');
             divCorazon.className = 'float-right py-2 pr-2';
