@@ -127,27 +127,40 @@ document.addEventListener("DOMContentLoaded", () => {
             pMunicipio.innerHTML = gasolinera.municipio;
 
             let divHorario = document.createElement('div')
-            divHorario.className = 'p-4';
+            divHorario.className = 'p-4 flex items-center w-full';
 
             let textoTituloHorario = document.createElement('p');
-            textoTituloHorario.className = 'uppercase tracking-wide text-sm font-bold text-gray-700 font-serif';
+            textoTituloHorario.className = 'uppercase tracking-wide text-sm font-bold text-gray-700 font-serif pl-4';
             textoTituloHorario.innerHTML = 'HORARIO';
             
             let textoTiempoHorario = document.createElement('p');
-            textoTiempoHorario.className = 'text-3xl text-gray-900 font-serif';
+            textoTiempoHorario.className = 'text-3xl text-gray-900 font-serif pl-4 flex items-center w-full';
             textoTiempoHorario.innerHTML = gasolinera.horario;
+            // div para alinear el maps
+            let divPartido=document.createElement('div')
+            divPartido.className ='w-full'
+
+            // div para alinear el maps2
+            let divPartido2=document.createElement('div')
+            divPartido2.className ='w-1/6'
 
             let divBotonHorario = document.createElement('div');
-            divBotonHorario.className = 'pt-4 flex justify-start';
 
-            let botonHorario = document.createElement('span');
-            botonHorario.className = 'border-2 border-blue-500 rounded-full font-bold text-blue-500 px-4 py-1 transition duration-300 ease-in-out hover:bg-blue-500 hover:text-white mr-6';
-            botonHorario.innerHTML = 'Ir';
+
+            let botonHorario = document.createElement('img');
+
+            botonHorario.className='w-10 h-10 float-right cursor-pointer'
+            botonHorario.src = 'imagenes/logoMaps.png';
+            botonHorario.addEventListener('click', (e) => {
+
+                window.location.href = 'https://www.google.cl/maps/place/'+ gasolinera.latitud + ' ' + gasolinera.longitud;
+
+            })
 
             let divTablaButton = document.createElement('div');
             divTablaButton.className = 'flex p-6 border-t border-gray-300 text-gray-800';
 
-            let tablaPrecios = document.createElement('table');
+            let tablaPrecios = document.createElement('table'); 
             tablaPrecios.className = 'default';
 
             let tbody = document.createElement('tbody');
@@ -310,8 +323,6 @@ document.addEventListener("DOMContentLoaded", () => {
             divTextoFila2Td2.appendChild(pTexto1Fila2Td2);
             divTextoFila2Td2.appendChild(pTexto2Fila2Td2);
     
-            
-            
             tablaPrecios.appendChild(tbody);
             contenedorTargetas.appendChild(divCarta);
             divCarta.appendChild(divCartaCentrado);
@@ -324,11 +335,17 @@ document.addEventListener("DOMContentLoaded", () => {
             divTextoTop.appendChild(pNombre);
             divTextoTop.appendChild(pDireccion);
             divTextoTop.appendChild(pMunicipio);
+
+            divPartido.appendChild(textoTituloHorario);
+            divPartido.appendChild(textoTiempoHorario);
+            divHorario.appendChild(divPartido);
+
+            divHorario.appendChild(divPartido2);
+            divPartido2.appendChild(botonHorario);
+            divPartido2.appendChild(divBotonHorario);
+            
             divCartaCentrado.appendChild(divHorario);
-            divHorario.appendChild(textoTituloHorario);
-            divHorario.appendChild(textoTiempoHorario);
-            divHorario.appendChild(divBotonHorario);
-            divBotonHorario.appendChild(botonHorario);
+            
             divCartaCentrado.appendChild(divTablaButton);
             divTablaButton.appendChild(tablaPrecios);
             tbody.appendChild(trFila1);
