@@ -12,6 +12,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
     });
 
+    axios.get('../src/infoUserJSON.php').then((response) => {
+        
+        imprimirUser(response.data);
+
+    });
+
     let botonCerrarSesion = document.getElementById("cerrarSesion");
     botonCerrarSesion.addEventListener("click", (e) => {
 
@@ -29,6 +35,20 @@ document.addEventListener("DOMContentLoaded", () => {
         })
 
     });
+
+    function imprimirUser(arrUsuarioInfo) {
+        
+        let nameUser = document.getElementById('nameUser');
+        let emailUser = document.getElementById('emailUser');
+        
+        arrUsuarioInfo.forEach(user => {
+
+            nameUser.innerHTML = user.nombre;
+            emailUser.innerHTML = user.email;
+
+        })
+
+    }
     
     function rellenarMunicipios(arrMunicipios) {
 

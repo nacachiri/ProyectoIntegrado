@@ -7,12 +7,32 @@ document.addEventListener("DOMContentLoaded", () => {
 
     });
 
+    axios.get('../src/infoUserJSON.php').then((response) => {
+        
+        imprimirUser(response.data);
+
+    });
+
     let botonVolver = document.getElementById('botonVolver');
     botonVolver.addEventListener("click", () => {
 
         window.location.href = '/';
 
     });
+
+    function imprimirUser(arrUsuarioInfo) {
+        
+        let nameUser = document.getElementById('nameUser');
+        let emailUser = document.getElementById('emailUser');
+        
+        arrUsuarioInfo.forEach(user => {
+
+            nameUser.innerHTML = user.nombre;
+            emailUser.innerHTML = user.email;
+
+        })
+
+    }
 
     function rellenarDatosConf(arrDatosGaso, id) {
         
