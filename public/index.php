@@ -52,8 +52,8 @@
                   class="z-50 absolute mt-1 transform -translate-x-40 bg-white rounded-md shadow-lg min-w-max"
                 >
                   <div class="flex flex-col p-4 space-y-1 font-medium border-b">
-                    <span class="text-gray-800">Nacho Calomarde</span>
-                    <span class="text-sm text-gray-400">nacho@proyectoalfa.es</span>
+                    <span class="text-gray-800" id="nameUser"></span>
+                    <span class="text-sm text-gray-400" id="emailUser"></span>
                   </div>
                   <ul class="flex flex-col p-2 my-2 space-y-1">
                     <li>
