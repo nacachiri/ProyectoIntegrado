@@ -9,11 +9,6 @@
 
 ?>
 
-<!-- <form action='../src/destruirSesion.php'>
-    <input type="submit" name="sesionDestroy" value="Cerrar sesion"/>
-</form> -->
-
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -42,7 +37,7 @@
                   <img
                     class="object-cover w-10 h-10 rounded-full"
                     src="https://avatars0.githubusercontent.com/u/57622665?s=460&u=8f581f4c4acd4c18c33a87b3e6476112325e8b38&v=4"
-                    alt="Ahmed Kamel"
+                    
                   />
                 </button>
                 <!-- green dot -->
@@ -85,8 +80,8 @@
                 <p>
                   <select class="z-1 py-1 px-1 text-gray-900 bg-gray-100 outline-none block h-full w-full" id="selectConbustible">
                     <option value="gasolina95">Gasolina 95</option>
-                    <option value="gasolina95">Gasolina 95</option>
-                    <option value="diesel">Diesel 95</option>
+                    <option value="gasolina95">Gasolina 98</option>
+                    <option value="diesel">Diesel</option>
                     <option value="diesel_plus">Diesel Premium</option>
                   </select>
                 </p>
