@@ -6,14 +6,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
     });
 
-    // FUNCIONALIDAD FILTROS NO ACABADA
-
-    // axios.get('../src/pintarMunicipiosJSON.php').then((response) => {
-        
-    //     rellenarMunicipios(response.data);
-
-    // });
-
     axios.get('../src/infoUserJSON.php').then((response) => {
         
         imprimirUser(response.data);
@@ -52,23 +44,28 @@ document.addEventListener("DOMContentLoaded", () => {
 
     }
 
-    // FUNCIONALIDAD FILTROS NO ACABADA
+    search = (e) => {
+
+        if (e.keyCode === 13) {
+          
+            axios.post('../src/filtrarGasolineras.php', {
+
+                filtro : e.target.value,
     
-    // function rellenarMunicipios(arrMunicipios) {
+            }).then((response) => {
 
-    //     let selectMunicipio = document.getElementById('selectMunicipios');
-        
-    //     arrMunicipios.forEach(municipio => {
+                // console.log(response.data);
 
-    //         let option = document.createElement('option');
-    //         option.value = municipio.id_municipio;
-    //         option.text = municipio.municipio;
+                let contenedorTargetas = document.getElementById('targetasContenedor');
+                contenedorTargetas.innerHTML = '';
+                
+                crearCartasGasolineras(response.data);
     
-    //         selectMunicipio.appendChild(option);
+            })
 
-    //     })
-
-    // }
+        }          
+      
+    }
 
     function crearCartasGasolineras(arrDatosGasolineras) {
 
@@ -100,7 +97,7 @@ document.addEventListener("DOMContentLoaded", () => {
             divCartaCentrado.className = 'bg-gray-100 shadow-xl rounded-lg overflow-hidden h-full';
 
             let divCorazon = document.createElement('div');
-            divCorazon.className = 'float-right py-2 pr-2';
+            divCorazon.className = 'float-right py-2 pr-2 text-red-700 font-bold';
             divCorazon.id = gasolinera.id
 
             let imgCorazon = document.createElement('img');
@@ -117,7 +114,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     
                     if (response.data == 'yaFavorita') {
 
-                        imgCorazon.src = 'imagenes/corazon.jpg';
+                        divCorazon.innerHTML = 'Ya es favorita'
 
                     }else{
 

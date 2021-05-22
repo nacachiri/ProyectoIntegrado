@@ -162,6 +162,19 @@
 
         }
 
+        public function recibirFiltro($textoBuscar){
+            
+            $conn = $this->getConn();
+
+            $sql = "SELECT id,logo, nombre, direccion, (SELECT municipio FROM municipios where municipios.id_municipio = gasolineras.id_municipio) As 'municipio', latitud, longitud, gasolina95, gasolina98, diesel, diesel_premium, horario FROM gasolineras HAVING municipio LIKE '%$textoBuscar%'";
+
+            $query = $conn->query($sql);
+            $arrGasolineras = $query->fetch_all(MYSQLI_ASSOC);
+
+            return $arrGasolineras;
+
+        }
+
         public function pintarGasolineras(){
 
 
@@ -173,19 +186,6 @@
             $arrGasolineras = $query->fetch_all(MYSQLI_ASSOC);
 
             return $arrGasolineras;
-
-        }
-
-        public function pintarMunicipios(){
-
-            $conn = $this->getConn();
-
-            $sql = "SELECT * FROM municipios";
-
-            $query = $conn->query($sql);
-            $arrMunicipios = $query->fetch_all(MYSQLI_ASSOC);
-
-            return $arrMunicipios;
 
         }
 
