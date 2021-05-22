@@ -68,7 +68,9 @@
             </div>
           </div>
         </header>
-        <div class="flex w-full">
+
+        <!-- FUNCIONALIDAD FILTROS NO ACABADA -->
+        <!-- <div class="flex w-full">
           <div class="bg-gray-100 shadow rounded-lg p-6 mx-auto w-full mr-4 ml-4 m-6">
             <div class="grid lg:grid-cols-2 gap-6">
               <div class="border focus-within:border-gray-500 focus-within:text-gray-500 transition-all duration-500 relative rounded p-1">
@@ -100,7 +102,7 @@
               </div>
             </div>
           </div>
-        </div>
+        </div> -->
         <div class="mx-auto">
           <div class="flex flex-wrap container mx-auto " id="targetasContenedor">
           

@@ -6,11 +6,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
     });
 
-    axios.get('../src/pintarMunicipiosJSON.php').then((response) => {
-        
-        rellenarMunicipios(response.data);
+    // FUNCIONALIDAD FILTROS NO ACABADA
 
-    });
+    // axios.get('../src/pintarMunicipiosJSON.php').then((response) => {
+        
+    //     rellenarMunicipios(response.data);
+
+    // });
 
     axios.get('../src/infoUserJSON.php').then((response) => {
         
@@ -49,22 +51,24 @@ document.addEventListener("DOMContentLoaded", () => {
         })
 
     }
-    
-    function rellenarMunicipios(arrMunicipios) {
 
-        let selectMunicipio = document.getElementById('selectMunicipios');
+    // FUNCIONALIDAD FILTROS NO ACABADA
+    
+    // function rellenarMunicipios(arrMunicipios) {
+
+    //     let selectMunicipio = document.getElementById('selectMunicipios');
         
-        arrMunicipios.forEach(municipio => {
+    //     arrMunicipios.forEach(municipio => {
 
-            let option = document.createElement('option');
-            option.value = municipio.id;
-            option.text = municipio.municipio;
+    //         let option = document.createElement('option');
+    //         option.value = municipio.id_municipio;
+    //         option.text = municipio.municipio;
     
-            selectMunicipio.appendChild(option);
+    //         selectMunicipio.appendChild(option);
 
-        })
+    //     })
 
-    }
+    // }
 
     function crearCartasGasolineras(arrDatosGasolineras) {
 
@@ -72,6 +76,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         arrDatosGasolineras.forEach(gasolinera => {
 
+            
             if (gasolinera.diesel == 0) {
                 gasolinera.diesel = '- -';
             }
@@ -370,12 +375,10 @@ document.addEventListener("DOMContentLoaded", () => {
             divTablaButton.appendChild(tablaPrecios);
             tbody.appendChild(trFila1);
             tbody.appendChild(trFila2);
-
-
-        }); 
-
         
-        
+
+        });
+
     }
 
 });
