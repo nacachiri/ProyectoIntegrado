@@ -36,8 +36,8 @@
                 <button @click="isOpen = !isOpen" class="p-1 bg-gray-200 rounded-full focus:outline-none focus:ring">
                   <img
                     class="object-cover w-10 h-10 rounded-full"
-                    src="https://avatars0.githubusercontent.com/u/57622665?s=460&u=8f581f4c4acd4c18c33a87b3e6476112325e8b38&v=4"
-                    alt="Ahmed Kamel"
+                    src="imagenes/iconoPerfil.png"
+                    
                   />
                 </button>
                 <!-- green dot -->
@@ -68,34 +68,18 @@
             </div>
           </div>
         </header>
+        
         <div class="flex w-full">
           <div class="bg-gray-100 shadow rounded-lg p-6 mx-auto w-full mr-4 ml-4 m-6">
-            <div class="grid lg:grid-cols-2 gap-6">
+            <div class="grid lg:grid-cols-1 gap-6">
               <div class="border focus-within:border-gray-500 focus-within:text-gray-500 transition-all duration-500 relative rounded p-1">
                 <div class="-mt-4 absolute tracking-wider px-1 uppercase text-xs">
                   <p>
-                    <label for="name" class="bg-gray-100 text-gray-600 px-1">Combustible</label>
+                    <label for="name" class="bg-gray-100 text-gray-600 px-1">Buscador Municipio</label>
                   </p>
                 </div>
                 <p>
-                  <select class="z-1 py-1 px-1 text-gray-900 bg-gray-100 outline-none block h-full w-full" id="selectConbustible">
-                    <option value="gasolina95">Gasolina 95</option>
-                    <option value="gasolina95">Gasolina 95</option>
-                    <option value="diesel">Diesel 95</option>
-                    <option value="diesel_plus">Diesel Premium</option>
-                  </select>
-                </p>
-              </div>
-              <div class="border focus-within:border-gray-500 focus-within:text-gray-500 transition-all duration-500 relative rounded p-1">
-                <div class="-mt-4 absolute tracking-wider px-1 uppercase text-xs">
-                  <p>
-                    <label for="name" class="bg-gray-100 text-gray-600 px-1">Municipios</label>
-                  </p>
-                </div>
-                <p>
-                  <select class="py-1 px-1 text-gray-900 bg-gray-100 outline-none block h-full w-full" id="selectMunicipios">
-                    
-                  </select>
+                  <input  class="z-1 py-1 px-1 text-gray-900 bg-gray-100 outline-none block h-full w-full" type="text" id="selectMunicipio" onkeyup="search(event)">
                 </p>
               </div>
             </div>
@@ -121,6 +105,7 @@
               isSearchBoxOpen: false,
             }
           }
+
         </script>
     </div>
 </body>

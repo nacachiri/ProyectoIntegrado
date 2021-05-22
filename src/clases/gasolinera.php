@@ -162,6 +162,19 @@
 
         }
 
+        public function recibirFiltro($textoBuscar){
+            
+            $conn = $this->getConn();
+
+            $sql = "SELECT id,logo, nombre, direccion, (SELECT municipio FROM municipios where municipios.id_municipio = gasolineras.id_municipio) As 'municipio', latitud, longitud, gasolina95, gasolina98, diesel, diesel_premium, horario FROM gasolineras HAVING municipio LIKE '%$textoBuscar%'";
+
+            $query = $conn->query($sql);
+            $arrGasolineras = $query->fetch_all(MYSQLI_ASSOC);
+
+            return $arrGasolineras;
+
+        }
+
         public function pintarGasolineras(){
 
 
@@ -176,16 +189,25 @@
 
         }
 
-        public function pintarMunicipios(){
+        public function añadirGasolineraFav($arrFavGaso){
 
             $conn = $this->getConn();
 
-            $sql = "SELECT * FROM municipios";
+            session_start();
+            $usuario = $_SESSION['usuario'];
+            $id_gasolinera = $arrFavGaso['idGasolinera'];
 
+            $sql = "SELECT * FROM gasolinera_fav WHERE id_gasolinera = '$id_gasolinera' AND id_usuario = '$usuario'";
             $query = $conn->query($sql);
-            $arrMunicipios = $query->fetch_all(MYSQLI_ASSOC);
 
-            return $arrMunicipios;
+            if($query->num_rows > 0) {
+                return 'yaFavorita';
+            }else {
+                $sql = "INSERT INTO gasolinera_fav(id_gasolinera,id_usuario,conf) VALUES ($id_gasolinera, $usuario, 0)";
+                $query = $conn->query($sql);
+
+                return $query;
+            }
 
         }
 

@@ -6,10 +6,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
     });
 
-    axios.get('../src/pintarMunicipiosJSON.php').then((response) => {
+    axios.get('../src/infoUserJSON.php').then((response) => {
         
-        console.log(response.data);
-        rellenarMunicipios(response.data);
+        imprimirUser(response.data);
 
     });
 
@@ -51,21 +50,27 @@ document.addEventListener("DOMContentLoaded", () => {
 
     }
 
+    search = (e) => {
+
+        if (e.keyCode === 13) {
+          
+            axios.post('../src/filtrarGasolineras.php', {
+
+                filtro : e.target.value,
     
-    function rellenarMunicipios(arrMunicipios) {
+            }).then((response) => {
 
-        let selectMunicipio = document.getElementById('selectMunicipios');
-        
-        arrMunicipios.forEach(municipio => {
+                // console.log(response.data);
 
-            let option = document.createElement('option');
-            option.value = municipio.id;
-            option.text = municipio.municipio;
+                let contenedorTargetas = document.getElementById('targetasContenedor');
+                contenedorTargetas.innerHTML = '';
+                
+                crearCartasGasolineras(response.data);
     
-            selectMunicipio.appendChild(option);
+            })
 
-        })
-
+        }          
+      
     }
 
     function crearCartasGasolineras(arrDatosGasolineras) {
@@ -74,6 +79,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         arrDatosGasolineras.forEach(gasolinera => {
 
+            
             if (gasolinera.diesel == 0) {
                 gasolinera.diesel = '- -';
             }
@@ -97,13 +103,32 @@ document.addEventListener("DOMContentLoaded", () => {
             divCartaCentrado.className = 'bg-gray-100 shadow-xl rounded-lg overflow-hidden h-full';
 
             let divCorazon = document.createElement('div');
-            divCorazon.className = 'float-right py-2 pr-2';
+            divCorazon.className = 'float-right py-2 pr-2 text-red-700 font-bold';
+            divCorazon.id = gasolinera.id
 
             let imgCorazon = document.createElement('img');
             imgCorazon.className = 'img-h-10 w-10 text-gray fill-current cursor-pointer';
             imgCorazon.src = 'public/imagenes/corazon.jpg';
 
-            divCorazon.addEventListener('click', () => {
+            divCorazon.addEventListener('click', (e) => {
+
+                axios.post('../src/añadirGasolineraFav.php', {
+
+                    idGasolinera : e.currentTarget.id,
+        
+                }).then((response) => {
+                    
+                    if (response.data == 'yaFavorita') {
+
+                        divCorazon.innerHTML = 'Ya es favorita'
+
+                    }else{
+
+                        imgCorazon.src = 'public/imagenes/corazonPintado.png';
+
+                    }
+                
+                })
 
                 imgCorazon.src = 'public/imagenes/corazonPintado.png';
 
@@ -131,27 +156,40 @@ document.addEventListener("DOMContentLoaded", () => {
             pMunicipio.innerHTML = gasolinera.municipio;
 
             let divHorario = document.createElement('div')
-            divHorario.className = 'p-4';
+            divHorario.className = 'p-4 flex items-center w-full';
 
             let textoTituloHorario = document.createElement('p');
-            textoTituloHorario.className = 'uppercase tracking-wide text-sm font-bold text-gray-700 font-serif';
+            textoTituloHorario.className = 'uppercase tracking-wide text-sm font-bold text-gray-700 font-serif pl-4';
             textoTituloHorario.innerHTML = 'HORARIO';
             
             let textoTiempoHorario = document.createElement('p');
-            textoTiempoHorario.className = 'text-3xl text-gray-900 font-serif';
+            textoTiempoHorario.className = 'text-3xl text-gray-900 font-serif pl-4 flex items-center w-full';
             textoTiempoHorario.innerHTML = gasolinera.horario;
+            // div para alinear el maps
+            let divPartido=document.createElement('div')
+            divPartido.className ='w-full'
+
+            // div para alinear el maps2
+            let divPartido2=document.createElement('div')
+            divPartido2.className ='w-1/6'
 
             let divBotonHorario = document.createElement('div');
-            divBotonHorario.className = 'pt-4 flex justify-start';
 
-            let botonHorario = document.createElement('span');
-            botonHorario.className = 'border-2 border-blue-500 rounded-full font-bold text-blue-500 px-4 py-1 transition duration-300 ease-in-out hover:bg-blue-500 hover:text-white mr-6';
-            botonHorario.innerHTML = 'Ir';
+
+            let botonHorario = document.createElement('img');
+
+            botonHorario.className='w-10 h-10 float-right cursor-pointer'
+            botonHorario.src = 'imagenes/logoMaps.png';
+            botonHorario.addEventListener('click', (e) => {
+
+                window.location.href = 'https://www.google.cl/maps/place/'+ gasolinera.latitud + ' ' + gasolinera.longitud;
+
+            })
 
             let divTablaButton = document.createElement('div');
             divTablaButton.className = 'flex p-6 border-t border-gray-300 text-gray-800';
 
-            let tablaPrecios = document.createElement('table');
+            let tablaPrecios = document.createElement('table'); 
             tablaPrecios.className = 'default';
 
             let tbody = document.createElement('tbody');
@@ -314,8 +352,6 @@ document.addEventListener("DOMContentLoaded", () => {
             divTextoFila2Td2.appendChild(pTexto1Fila2Td2);
             divTextoFila2Td2.appendChild(pTexto2Fila2Td2);
     
-            
-            
             tablaPrecios.appendChild(tbody);
             contenedorTargetas.appendChild(divCarta);
             divCarta.appendChild(divCartaCentrado);
@@ -328,21 +364,25 @@ document.addEventListener("DOMContentLoaded", () => {
             divTextoTop.appendChild(pNombre);
             divTextoTop.appendChild(pDireccion);
             divTextoTop.appendChild(pMunicipio);
+
+            divPartido.appendChild(textoTituloHorario);
+            divPartido.appendChild(textoTiempoHorario);
+            divHorario.appendChild(divPartido);
+
+            divHorario.appendChild(divPartido2);
+            divPartido2.appendChild(botonHorario);
+            divPartido2.appendChild(divBotonHorario);
+            
             divCartaCentrado.appendChild(divHorario);
-            divHorario.appendChild(textoTituloHorario);
-            divHorario.appendChild(textoTiempoHorario);
-            divHorario.appendChild(divBotonHorario);
-            divBotonHorario.appendChild(botonHorario);
+            
             divCartaCentrado.appendChild(divTablaButton);
             divTablaButton.appendChild(tablaPrecios);
             tbody.appendChild(trFila1);
             tbody.appendChild(trFila2);
-
-
-        }); 
-
         
-        
+
+        });
+
     }
 
 });

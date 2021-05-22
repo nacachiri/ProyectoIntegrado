@@ -44,26 +44,28 @@ document.addEventListener("DOMContentLoaded", () => {
         arrDatosGaso.forEach(gasolinera => {
 
             if (gasolinera.id == id) {
+
                 precioG95.innerHTML = gasolinera.gasolina95;
                 precioG98.innerHTML = gasolinera.gasolina98;
                 precioD.innerHTML = gasolinera.diesel;
                 precioDP.innerHTML = gasolinera.diesel_premium;
-            }
 
-            if (gasolinera.diesel == 0) {
-                precioD.innerHTML = '- -';
-            }
-
-            if (gasolinera.diesel_premium == 0) {
-                precioDP.innerHTML = '- -';
-            }
-
-            if (gasolinera.gasolina95 == 0) {
-                precioG95.innerHTML = '- -';
-            }
-
-            if (gasolinera.gasolina98 == 0) {
-                precioG98.innerHTML = '- -';
+                if (gasolinera.diesel == 0) {
+                    precioD.innerHTML = '- -';
+                }
+    
+                if (gasolinera.diesel_premium == 0) {
+                    precioDP.innerHTML = '- -';
+                }
+    
+                if (gasolinera.gasolina95 == 0) {
+                    precioG95.innerHTML = '- -';
+                }
+    
+                if (gasolinera.gasolina98 == 0) {
+                    precioG98.innerHTML = '- -';
+                }
+                
             }
 
         }); 
