@@ -79,7 +79,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
         arrDatosGasolineras.forEach(gasolinera => {
 
-            
             if (gasolinera.diesel == 0) {
                 gasolinera.diesel = '- -';
             }
@@ -179,7 +178,7 @@ document.addEventListener("DOMContentLoaded", () => {
             let botonHorario = document.createElement('img');
 
             botonHorario.className='w-10 h-10 float-right cursor-pointer'
-            botonHorario.src = 'imagenes/logoMaps.png';
+            botonHorario.src = 'public/imagenes/logoMaps.png';
             botonHorario.addEventListener('click', (e) => {
 
                 window.location.href = 'https://www.google.cl/maps/place/'+ gasolinera.latitud + ' ' + gasolinera.longitud;

@@ -36,7 +36,7 @@
                 <button @click="isOpen = !isOpen" class="p-1 bg-gray-200 rounded-full focus:outline-none focus:ring">
                   <img
                     class="object-cover w-10 h-10 rounded-full"
-                    src="imagenes/iconoPerfil.png"
+                    src="public/imagenes/iconoPerfil.png"
                     
                   />
                 </button>
