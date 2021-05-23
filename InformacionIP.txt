@@ -1,0 +1,14 @@
+Hola,
+
+Enlace al repo: https://github.com/nacachiri/ProyectoIntegrado
+
+Para entrar al proyecto utiliza coinfuel.ddns.net o la Ip: 34.200.84.55
+El usuario de ssh es ubuntu y la clave privada esta adjunta.
+
+PhpmyAdmin:
+Usuario: root
+Password: proyectoalfa
+
+Salu2
+
+By ProyectoAlfa Coinfuel

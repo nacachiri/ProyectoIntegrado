@@ -1,7 +1,10 @@
 Hola,
 
-Si vas ha abrir el codigo en local tendras que cambiar alguna de las rutas, 
-y ademas modificar el archivo de conf.csv.
+Para entrar al proyecto utiliza coinfuel.ddns.net.
+Recordamos que es obligatorio su registro para entrar en la aplicación.
+
+Si vas ha abrir el código en local tendrás que cambiar alguna de las rutas,
+y además modificar el archivo de conf.csv.
 
 Salu2
 
