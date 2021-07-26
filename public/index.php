@@ -16,8 +16,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.1.2/tailwind.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"></script>
-    <script src="public/js/index.js"></script>
-    <link rel="icon" type="image/png" href="public/Logo/logoFavicon.png">
+    <script src="js/index.js"></script>
+    <link rel="icon" type="image/png" href="Logo/logoFavicon.png">
     <title>CoinFuel | Perfil</title>
 </head>
 <body>
@@ -36,7 +36,7 @@
                 <button @click="isOpen = !isOpen" class="p-1 bg-gray-200 rounded-full focus:outline-none focus:ring">
                   <img
                     class="object-cover w-10 h-10 rounded-full"
-                    src="public/imagenes/iconoPerfil.png"
+                    src="imagenes/iconoPerfil.png"
                     
                   />
                 </button>
